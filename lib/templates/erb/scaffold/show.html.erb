@@ -1,0 +1,21 @@
+<h2><%%= t("<%= singular_table_name %>.acao.detalhar") %></h2>
+<br>
+<div class="row-fluid">
+  <div class="span12">
+	<div class="row-fluid">
+		<div class="span6"> 
+<% attributes.each do |attribute| -%> 
+		<p>
+		  <b><%%= t('<%= singular_table_name %>.<%= attribute.name %>')%>:</b>
+		  <%%= @<%= singular_table_name %>.<%= attribute.name %> if @<%= singular_table_name %>  %>
+		</p>
+<% end -%>
+        </div>	
+	</div><!-- row-fluid root --> 
+  </div> <!-- span12 --> 
+</div> <!-- row-fluid root --> 
+<div class="actionsShow">
+	<a href="<%%= edit_<%= singular_table_name %>_path %>">
+		<button class="btn btn-primary" name="btnback"><%%= t('botao.editar')%></button></a>&nbsp; 
+		<a class="btn" href="<%%= <%= plural_table_name %>_path %>"><%%= t('botao.voltar')%></a>
+</div>

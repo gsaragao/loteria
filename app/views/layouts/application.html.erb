@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t("app.nome_completo") %></title>
+
+  <%= stylesheet_link_tag   "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="assets/bootstrap-responsive.css" rel="stylesheet">
+</head>
+<script>
+
+jQuery(function($) {
+       sipMask = new Mask();
+       sipMask.autoDetect();
+    });
+</script>
+
+<body>
+  <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/"><%= t("app.nome") %></a>
+          <ul class="nav">
+            <li class='<%=@class_home %>' ><a href="/home"><%= t("app.menu.home") %></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+ <div class="container">
+    <div class="content">
+		  <div class="page-header">
+		   </div>
+
+			<% if notice.present? %>
+			    <script>showNotification(true,'<%= notice %>');</script>
+			<% end %>	
+			<% if alert.present? %>
+			    <script>showNotification(false,'<%= alert %>');</script>
+			<% end %>
+      <br>
+        <%= yield %>
+
+    </div>
+    <br>
+   <div class="row-fluid">
+      <div class="span11"> 
+      <hr>
+      <footer>
+	   <center><p><%= t("app.nome_completo") %></p></center>
+	   </footer>
+    </div>
+    </div>
+
+ </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<h3>Bem-vindo a Loteria!</h3>
+<br>
+<%= form_for(@home, :html => { :method => :get, :class => 'form-horizontal' }, :url => home_index_path) do |f| %>
+
+	<table class="table table-striped">
+	  <tr>
+		<th>Excluir dezena&nbsp;
+		<%= f.text_field :excluir_dezena, :class => 'input-medium' %>&nbsp;&nbsp;
+	    <%= f.submit t('botao.pesquisar'), :class => "btn btn-primary" %></th>
+	 </tr>
+	</table>
+<% end %>
+<% if @jogos.size > 0  %>
+ <table class="table table-striped">
+  <tr>
+    <th>A</th>
+	<th>B</th>
+    <th>C</th>
+    <th>D</th>
+    <th>E</th>
+    <th>F</th>
+  </tr>
+
+ <% @jogos.each do |jogo| %>
+  <tr>
+    <td><%= jogo[0] %></td>
+    <td><%= jogo[1] %></td>
+    <td><%= jogo[2] %></td>
+    <td><%= jogo[3] %></td>
+    <td><%= jogo[4] %></td>
+    <td><%= jogo[5] %></td>
+  </tr>
+ <% end %>
+ </table>
+
+<% end %>

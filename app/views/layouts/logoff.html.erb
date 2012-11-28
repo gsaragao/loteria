@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t("app.nome_completo") %></title>
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tag %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <center><a class="brand" href="/"><%= t("app.nome_completo") %></a></center>
+        </div>
+      </div>
+    </div>
+	<div class="container">
+    <div class="content">
+		  <div class="page-header">
+		   </div>
+
+			<% if notice.present? %>
+			    <script>showNotification(true,'<%= notice %>');</script>
+			<% end %>	
+			<% if alert.present? %>
+			    <script>showNotification(false,'<%= alert %>');</script>
+			<% end %>
+	      <br><br><br>
+        <%= yield %>
+
+    </div>
+    <br>
+    <hr>
+    <footer>
+	  <center><p>© <%= t("app.nome_completo") %></p></center>
+	</footer>
+ </div>
+</body>
+</html>
