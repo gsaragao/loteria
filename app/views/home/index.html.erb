@@ -1,36 +1,105 @@
-<h3>Bem-vindo a Loteria!</h3>
-<br>
+
 <%= form_for(@home, :html => { :method => :get, :class => 'form-horizontal' }, :url => home_index_path) do |f| %>
 
 	<table class="table table-striped">
-	  <tr>
-		<th>Excluir dezena&nbsp;
-		<%= f.text_field :excluir_dezena, :class => 'input-medium' %>&nbsp;&nbsp;
-	    <%= f.submit t('botao.pesquisar'), :class => "btn btn-primary" %></th>
-	 </tr>
+    <tr>
+      <th>
+        Critérios de ALIJAMENTO
+      </th>
+    </tr>  
+    <tr>
+      <td>
+        <div class="control-group">    
+          <%= f.label 'Range' , :class => 'control-label' %>
+           <div class="controls">
+              <label class="checkbox inline">
+                <span class="badge badge-info">01</span>&nbsp;
+                  <%= select_tag 'home[a]' , options_for_select((1..6).to_a,@home.a), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-info">02</span>&nbsp;
+                <%= select_tag 'home[b]', options_for_select((2..9).to_a,@home.b), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-info">03</span>&nbsp;
+                <%= select_tag 'home[c]', options_for_select((3..11).to_a,@home.c), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-info">04</span>&nbsp;
+                <%= select_tag 'home[d]', options_for_select((4..12).to_a,@home.d), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-info">05</span>&nbsp;
+                <%= select_tag 'home[e]', options_for_select((5..14).to_a,@home.e), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+              </div>
+             <div class="controls">
+              <label class="checkbox inline">
+                <span class="badge badge-info">06</span>&nbsp;
+                <%= select_tag 'home[f]', options_for_select((6..15).to_a,@home.f), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-info">07</span>&nbsp;
+                <%= select_tag 'home[g]', options_for_select((7..16).to_a,@home.g), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-info">08</span>&nbsp;
+                <%= select_tag 'home[h]', options_for_select((8..17).to_a,@home.h), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-info">09</span>&nbsp;
+                <%= select_tag 'home[i]', options_for_select((9..19).to_a,@home.i), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-info">10</span>&nbsp;
+                <%= select_tag 'home[j]', options_for_select((10..20).to_a,@home.j), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+            </div>
+             <div class="controls">
+              <label class="checkbox inline">
+                <span class="badge badge-info">11</span>&nbsp;
+                <%= select_tag 'home[k]', options_for_select((11..21).to_a,@home.k), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-info">12</span>&nbsp;
+                <%= select_tag 'home[l]', options_for_select((12..22).to_a,@home.l), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-info">13</span>&nbsp;
+                <%= select_tag 'home[m]', options_for_select((13..23).to_a,@home.m), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-info">14</span>&nbsp;
+                <%= select_tag 'home[n]', options_for_select((14..24).to_a,@home.n), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-info">15</span>&nbsp;
+                <%= select_tag 'home[o]', options_for_select((15..25).to_a,@home.o), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+              </label>
+
+            </div>
+        </div>
+        <div class="control-group">    
+           <%= f.label 'Mostrar Cartões' , :class => 'control-label' %>
+           <div class="controls">
+              <label class="checkbox inline">
+                <%= f.check_box :gerar %>
+              </label>
+            </div>
+        </div>
+     </td>
+   </tr>
+   <%= hidden_field_tag 'execute', true %>     
+   <tr>
+    <th><%= f.submit 'Gerar' , :class => "btn btn-primary" %></th>
+   </tr>
+
 	</table>
 <% end %>
-<% if @jogos.size > 0  %>
- <table class="table table-striped">
-  <tr>
-    <th>A</th>
-	<th>B</th>
-    <th>C</th>
-    <th>D</th>
-    <th>E</th>
-    <th>F</th>
-  </tr>
-
- <% @jogos.each do |jogo| %>
-  <tr>
-    <td><%= jogo[0] %></td>
-    <td><%= jogo[1] %></td>
-    <td><%= jogo[2] %></td>
-    <td><%= jogo[3] %></td>
-    <td><%= jogo[4] %></td>
-    <td><%= jogo[5] %></td>
-  </tr>
- <% end %>
- </table>
-
+<br><br>
+<% if @jogos %>
+    <span><%= @jogos[0].total %> cartões</span>
 <% end %>
+
+ <br><br>
+

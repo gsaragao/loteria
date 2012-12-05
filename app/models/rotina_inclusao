@@ -1,0 +1,66 @@
+def carregar_jogos(home)
+  	retorno = []
+    universo_cartao = []
+  	
+  	for x in 1..25
+      universo_cartao << x
+  	end	
+
+    cont = 0
+
+		for a in 0..universo_cartao.size - 1
+			for b in (a+1)..universo_cartao.size - 1
+        for c in (b+1)..universo_cartao.size - 1
+          for d in (c+1)..universo_cartao.size - 1
+            for e in (d+1)..universo_cartao.size - 1
+              for f in (e+1)..universo_cartao.size - 1
+                for g in (f+1)..universo_cartao.size - 1
+                  for h in (g+1)..universo_cartao.size - 1
+                    for i in (h+1)..universo_cartao.size - 1
+                      for j in (i+1)..universo_cartao.size - 1
+                        for k in (j+1)..universo_cartao.size - 1
+                          for l in (k+1)..universo_cartao.size - 1
+                            for m in (l+1)..universo_cartao.size - 1
+                              for n in (m+1)..universo_cartao.size - 1
+                                for o in (n+1)..universo_cartao.size - 1
+
+                                  loto = Lotofacil.new
+                          	 	  	loto.a = universo_cartao[a]
+                          	 	  	loto.b = universo_cartao[b]
+                                  loto.c = universo_cartao[c]
+                                  loto.d = universo_cartao[d]
+                                  loto.e = universo_cartao[e]
+                                  loto.f = universo_cartao[f]
+                                  loto.g = universo_cartao[g]
+                                  loto.h = universo_cartao[h]
+                                  loto.i = universo_cartao[i]
+                                  loto.j = universo_cartao[j]
+                                  loto.k = universo_cartao[k]
+                                  loto.l = universo_cartao[l]
+                                  loto.m = universo_cartao[m]
+                                  loto.n = universo_cartao[n]
+                                  loto.o = universo_cartao[o]
+                                  loto.save
+                          	 	  	
+                                  cont+= 1
+
+                                end
+                              end  
+                            end
+                          end
+                        end 
+                      end       
+                    end
+                  end  
+                end
+              end
+            end 
+          end       
+        end
+      end  
+    end
+    puts "FINALIZADO!!!!!!"
+    puts "#{cont} cartões"
+    retorno = cont
+	  retorno
+  end

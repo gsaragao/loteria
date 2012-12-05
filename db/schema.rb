@@ -11,9 +11,51 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127161632) do
+ActiveRecord::Schema.define(:version => 20121203025625) do
 
   create_table "homes", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "lotofacils", :force => true do |t|
+    t.integer   "a"
+    t.integer   "b"
+    t.integer   "c"
+    t.integer   "d"
+    t.integer   "e"
+    t.integer   "f"
+    t.integer   "g"
+    t.integer   "h"
+    t.integer   "i"
+    t.integer   "j"
+    t.integer   "k"
+    t.integer   "l"
+    t.integer   "m"
+    t.integer   "n"
+    t.integer   "o"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "resultados", :force => true do |t|
+    t.integer  "concurso"
+    t.date     "data"
+    t.integer  "a"
+    t.integer  "b"
+    t.integer  "c"
+    t.integer  "d"
+    t.integer  "e"
+    t.integer  "f"
+    t.integer  "g"
+    t.integer  "h"
+    t.integer  "i"
+    t.integer  "j"
+    t.integer  "k"
+    t.integer  "l"
+    t.integer  "m"
+    t.integer  "n"
+    t.integer  "o"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

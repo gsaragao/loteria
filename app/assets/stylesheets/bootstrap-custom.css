@@ -62,10 +62,10 @@ input, button, select, textarea {
 }
 
 .form-horizontal .control-label {
-  padding-top: 0px !important;  
+  padding-top: 5px !important;  
   margin-left: -30px !important;
   font-weight: bold;
-  font-size: 10px;
+
 }
 /********** teste *********/
 
@@ -116,4 +116,10 @@ input[type="checkbox"] {
   border-color: #e5e5e5;
 }
 
+.navbar-inner {
+  background-color: #ffffff; 
+}
 
+.input-supermini {
+  width: 45px;
+}

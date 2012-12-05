@@ -9,6 +9,9 @@ gem 'mysql2'
 
 gem 'devise'
 gem 'brdinheiro'
+gem 'roo'
+#gem 'iconv'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
