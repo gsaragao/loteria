@@ -110,81 +110,81 @@
            <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-success">01</span>&nbsp;
-                  <input type="text" name="home[aa]" class="input-hipermini" />
+                <%= f.text_field :aa, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">02</span>&nbsp;
-                <input type="text" name="home[bb]" class="input-hipermini" />
+                <%= f.text_field :bb, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">03</span>&nbsp;
-                <input type="text" name="home[cc]" class="input-hipermini" />
+                <%= f.text_field :cc, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">04</span>&nbsp;
-                <input type="text" name="home[dd]" class="input-hipermini" />
+                <%= f.text_field :dd, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">05</span>&nbsp;
-                <input type="text" name="home[ee]" class="input-hipermini" />
+                <%= f.text_field :ee, :class => 'input-hipermini' %>
               </label>
               </div>
              <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-success">06</span>&nbsp;
-                  <input type="text" name="home[ff]" class="input-hipermini" />
+                  <%= f.text_field :ff, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">07</span>&nbsp;
-                <input type="text" name="home[gg]" class="input-hipermini" />
+                <%= f.text_field :gg, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">08</span>&nbsp;
-                <input type="text" name="home[hh]" class="input-hipermini" />
+                <%= f.text_field :hh, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">09</span>&nbsp;
-                <input type="text" name="home[ii]" class="input-hipermini" />
+                <%= f.text_field :ii, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">10</span>&nbsp;
-                <input type="text" name="home[jj]" class="input-hipermini" />
+                <%= f.text_field :jj, :class => 'input-hipermini' %>
               </label>
               </div>
              <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-success">11</span>&nbsp;
-                  <input type="text" name="home[kk]" class="input-hipermini" />
+                  <%= f.text_field :kk, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">12</span>&nbsp;
-                <input type="text" name="home[ll]" class="input-hipermini" />
+                <%= f.text_field :ll, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">13</span>&nbsp;
-                <input type="text" name="home[mm]" class="input-hipermini" />
+                <%= f.text_field :mm, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">14</span>&nbsp;
-                <input type="text" name="home[nn]" class="input-hipermini" />
+                <%= f.text_field :nn, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">15</span>&nbsp;
-                <input type="text" name="home[oo]" class="input-hipermini" />
+                <%= f.text_field :oo, :class => 'input-hipermini' %>
               </label>
               </div>
               <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-success">16</span>&nbsp;
-                  <input type="text" name="home[pp]" class="input-hipermini" />
+                  <%= f.text_field :pp, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">17</span>&nbsp;
-                <input type="text" name="home[qq]" class="input-hipermini" />
+                <%= f.text_field :qq, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">18</span>&nbsp;
-                <input type="text" name="home[rr]" class="input-hipermini" />
+                <%= f.text_field :rr, :class => 'input-hipermini' %>
               </label>
               </div>
               <br>
@@ -206,7 +206,7 @@
               </div>  
             </div>
                 
-              <br><br>
+              <br>
                 <div class="control-group">    
                   <div class="controls">
                     <table class="table table-striped">
@@ -258,17 +258,21 @@
                     <tr>
                       <td></td>
                       <td><b>TOTAL</b></td>
-                      <td><span style="color:#006400"><b><%= number_to_currency(@resultado[19])%></b></span></td>
+                      <td><span style="color:#1E90FF"><b><%= number_to_currency(@resultado[19])%></b></span></td>
                     </tr> 
                     <tr>
                       <td></td>
                       <td><b>DESPESA</b></td>
-                      <td><span style="color:#red"><b><%= number_to_currency(@resultado[13])%></b></span></td>
+                      <td><span style="color:red"><b><%= number_to_currency(@resultado[13])%></b></span></td>
                     </tr>
                     <tr>
                       <td></td>
                       <td><b>RESULTADO</b></td>
-                      <td><span style="color:#006400"><b><%= number_to_currency(@resultado[20])%></b></span></td>
+                      <% if @resultado[20] && @resultado[20] >= 0 %>
+                        <td><span style="color:#1E90FF"><b><%= number_to_currency(@resultado[20])%></b></span></td>
+                      <% else %>  
+                        <td><span style="color:red"><b><%= number_to_currency(@resultado[20])%></b></span></td>
+                      <% end %>  
                     </tr>
 
                    </table>
@@ -292,7 +296,51 @@ $('#13pt').tooltip();
 $('#14pt').tooltip();
 $('#15pt').tooltip();
 
+if ($('#r15').is('input:checked')) {
+  $('#home_pp').attr('disabled','disabled'); 
+  $('#home_qq').attr('disabled','disabled'); 
+  $('#home_rr').attr('disabled','disabled'); 
+ }
 
+ if ($('#r16').is('input:checked')) {
+  $('#home_pp').removeAttr('disabled'); 
+  $('#home_qq').attr('disabled','disabled'); 
+  $('#home_rr').attr('disabled','disabled'); 
+ }
 
+ if ($('#r17').is('input:checked')) {
+  $('#home_pp').removeAttr('disabled'); 
+  $('#home_qq').removeAttr('disabled');  
+  $('#home_rr').attr('disabled','disabled'); 
+ }
+
+if ($('#r18').is('input:checked')) {
+  $('#home_pp').removeAttr('disabled'); 
+  $('#home_qq').removeAttr('disabled');  
+  $('#home_rr').removeAttr('disabled');  }
+
+$('#r15').click(function() { 
+  $('#home_pp').attr('disabled','disabled'); 
+  $('#home_qq').attr('disabled','disabled'); 
+  $('#home_rr').attr('disabled','disabled'); 
+});
+
+$('#r16').click(function() { 
+  $('#home_pp').removeAttr('disabled'); 
+  $('#home_qq').attr('disabled','disabled'); 
+  $('#home_rr').attr('disabled','disabled'); 
+});
+
+$('#r17').click(function() { 
+  $('#home_pp').removeAttr('disabled'); 
+  $('#home_qq').removeAttr('disabled');  
+  $('#home_rr').attr('disabled','disabled'); 
+});
+
+$('#r18').click(function() { 
+  $('#home_pp').removeAttr('disabled'); 
+  $('#home_qq').removeAttr('disabled');  
+  $('#home_rr').removeAttr('disabled'); 
+});
 
 </script>
