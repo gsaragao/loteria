@@ -6,15 +6,6 @@
     nome_completo: Loteria - 2013
     menu: 
       home: Home
-      unidade: Unidade
-      imovel: Imóvel
-      usuario: Usuário
-      auditoria: Auditoria
-      administracao: Administração
-      pessoa: Locatário
-      pessoa_fisica: Pessoa Física
-      pessoa_juridica: Pessoa Jurídica
-      socio: Sócio
 
   home:
     titulo: Painel Geral
@@ -35,18 +26,6 @@
     usuario: Usuário
     data_criacao: Data Criação
   
-  auditoria:
-    self: Auditoria
-    acao: 
-      listar: Listar Auditoria
-      detalhar: Detalhes Auditoria
-    action: Ação
-    object: Entidade
-    name: Usuário
-    version: Versão
-    remote_address: Endereço IP  
-    data_criacao: Data Hora
-    audited_changes: Alterações
       
   botao:
     criar: Criar
@@ -162,7 +141,7 @@
         unit: 'R$'
         separator: ','
         delimiter: '.'
-        precision: 3
+        precision: 2
         significant: false
         strip_insignificant_zeros: false
 

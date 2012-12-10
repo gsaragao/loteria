@@ -1,5 +1,8 @@
-def carregar_jogos(home)
-  	retorno = []
+# encoding: UTF-8
+class TestarUniverso
+
+  def simular(qtde=15)
+
     universo_cartao = []
   	
   	for x in 1..25
@@ -24,25 +27,27 @@ def carregar_jogos(home)
                               for n in (m+1)..universo_cartao.size - 1
                                 for o in (n+1)..universo_cartao.size - 1
 
-                                  loto = Lotofacil.new
-                          	 	  	loto.a = universo_cartao[a]
-                          	 	  	loto.b = universo_cartao[b]
-                                  loto.c = universo_cartao[c]
-                                  loto.d = universo_cartao[d]
-                                  loto.e = universo_cartao[e]
-                                  loto.f = universo_cartao[f]
-                                  loto.g = universo_cartao[g]
-                                  loto.h = universo_cartao[h]
-                                  loto.i = universo_cartao[i]
-                                  loto.j = universo_cartao[j]
-                                  loto.k = universo_cartao[k]
-                                  loto.l = universo_cartao[l]
-                                  loto.m = universo_cartao[m]
-                                  loto.n = universo_cartao[n]
-                                  loto.o = universo_cartao[o]
-                                  loto.save
-                          	 	  	
-                                  cont+= 1
+                                  if (qtde == 15)
+                                    cont+= 1
+                                  else 
+                                     for p in (o+1)..universo_cartao.size - 1
+                                       
+                                        if (qtde == 16)
+                                          cont+= 1
+                                        else
+                                           for q in (p+1)..universo_cartao.size - 1
+                                             
+                                              if (qtde == 17)
+                                                cont+= 1
+                                              elsif (qtde == 18)
+                                                 for r in (q+1)..universo_cartao.size - 1
+                                                   cont+= 1
+                                                 end #for r
+                                              end #qtde 17
+                                           end #for q
+                                        end #qtde 16
+                                     end #for p
+                                  end #qtde 15
 
                                 end
                               end  
@@ -59,8 +64,8 @@ def carregar_jogos(home)
         end
       end  
     end
-    puts "FINALIZADO!!!!!!"
-    puts "#{cont} cartões"
-    retorno = cont
-	  retorno
+  
+  cont
   end
+
+end

@@ -3,7 +3,7 @@ body {
 }
 
 .container { 
-  margin-left: 50px !important;
+  margin-left: 15px !important;
 }
 
 h3,h4,h5,h6{ line-height:15px !important;}
@@ -63,24 +63,17 @@ input, button, select, textarea {
 
 .form-horizontal .control-label {
   padding-top: 5px !important;  
-  margin-left: -30px !important;
+  margin-left: 0px !important;
   font-weight: bold;
 
 }
 /********** teste *********/
 
 .form-horizontal .controls {
-  margin-left: 120px !important;
+  margin-left: 0px !important;
   *margin-left: 0;
 }
 
-.form-horizontal .controls:first-child {
-  *padding-left: 160px;
-}
-
-.form-horizontal .form-actions {
-  padding-left: 160px;
-}
 
 input[type="radio"] {
   width:15px !important;
@@ -123,3 +116,32 @@ input[type="checkbox"] {
 .input-supermini {
   width: 45px;
 }
+
+.input-hipermini {
+  width: 30px;
+}
+
+.span13 {
+  width: 1020px;
+}
+
+.span14 {
+  width: 1100px;
+}
+
+.span15 {
+  width: 1164px;
+}
+
+.span16 {
+  width: 1244px;
+}
+
+.span17 {
+  width: 1324px;
+}
+
+.span18 {
+  width: 1404px;
+}
+

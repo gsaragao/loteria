@@ -1,5 +1,4 @@
 # encoding : utf-8
-require 'iconv'
 class HomeController < ApplicationController
 
   respond_to :html
@@ -7,11 +6,16 @@ class HomeController < ApplicationController
 
   def index
     @home = Home.new(params[:home])
-    verifica_blank
-
-    if params[:execute]
+    default_values
+    @resultado = []
+    
+    if params[:commit] == 'Gerar'
       @jogos = Lotofacil.pesquisar(@home)
     end  
+
+    if params[:commit] == 'Verificar'
+      @resultado = Resultado.verificar(@home)
+    end    
 
   end
 
@@ -21,8 +25,12 @@ class HomeController < ApplicationController
     @class_home = 'active'  
   end
 
-  def verifica_blank
-   
+  def default_values
+    
+    if @home.qtde_dezenas.blank?
+       @home.qtde_dezenas = 15
+    end
+
     if @home.a.blank?
        @home.a = [1,2]
     end  

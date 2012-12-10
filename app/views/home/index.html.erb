@@ -1,16 +1,12 @@
 
 <%= form_for(@home, :html => { :method => :get, :class => 'form-horizontal' }, :url => home_index_path) do |f| %>
+<div class="row">
+  <div class="span18">
+    <div class="row">
+      <div class="span7"> 
 
-	<table class="table table-striped">
-    <tr>
-      <th>
-        Critérios de ALIJAMENTO
-      </th>
-    </tr>  
-    <tr>
-      <td>
         <div class="control-group">    
-          <%= f.label 'Range' , :class => 'control-label' %>
+          
            <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-info">01</span>&nbsp;
@@ -80,26 +76,223 @@
             </div>
         </div>
         <div class="control-group">    
-           <%= f.label 'Mostrar Cartões' , :class => 'control-label' %>
+           <div class="controls">
+              <b>Mostrar cartões</b>&nbsp;<input type="checkbox" name="home[gerar]" value="0" /> 
+           </div>
+        </div>
+
+        <div class="row">
+          <div class="span7">
+            <%= f.submit 'Gerar' , :class => "btn btn-primary" %>
+          </div> <!-- span12-->
+        </div> <!-- row -->
+        <br><br>
+        <div class="row">
+          <div class="span7">
+            <% if @jogos %>
+            <table class="table table-striped">
+              <tr>
+                <th>Resultado</th>
+              </tr>
+              <tr>
+                <td>Total:&nbsp;<span style="color:#1E90FF"><%= @jogos[0].total %></span> cartões</td>
+              </tr> 
+             </table>
+            <% end %> 
+          </div> <!-- span7-->
+        </div> <!-- row -->
+
+
+     </div> <!-- span7-->
+     <div class="span7">
+
+      <div class="control-group">    
            <div class="controls">
               <label class="checkbox inline">
-                <%= f.check_box :gerar %>
+                <span class="badge badge-success">01</span>&nbsp;
+                  <input type="text" name="home[aa]" class="input-hipermini" />
               </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">02</span>&nbsp;
+                <input type="text" name="home[bb]" class="input-hipermini" />
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">03</span>&nbsp;
+                <input type="text" name="home[cc]" class="input-hipermini" />
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">04</span>&nbsp;
+                <input type="text" name="home[dd]" class="input-hipermini" />
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">05</span>&nbsp;
+                <input type="text" name="home[ee]" class="input-hipermini" />
+              </label>
+              </div>
+             <div class="controls">
+              <label class="checkbox inline">
+                <span class="badge badge-success">06</span>&nbsp;
+                  <input type="text" name="home[ff]" class="input-hipermini" />
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">07</span>&nbsp;
+                <input type="text" name="home[gg]" class="input-hipermini" />
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">08</span>&nbsp;
+                <input type="text" name="home[hh]" class="input-hipermini" />
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">09</span>&nbsp;
+                <input type="text" name="home[ii]" class="input-hipermini" />
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">10</span>&nbsp;
+                <input type="text" name="home[jj]" class="input-hipermini" />
+              </label>
+              </div>
+             <div class="controls">
+              <label class="checkbox inline">
+                <span class="badge badge-success">11</span>&nbsp;
+                  <input type="text" name="home[kk]" class="input-hipermini" />
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">12</span>&nbsp;
+                <input type="text" name="home[ll]" class="input-hipermini" />
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">13</span>&nbsp;
+                <input type="text" name="home[mm]" class="input-hipermini" />
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">14</span>&nbsp;
+                <input type="text" name="home[nn]" class="input-hipermini" />
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">15</span>&nbsp;
+                <input type="text" name="home[oo]" class="input-hipermini" />
+              </label>
+              </div>
+              <div class="controls">
+              <label class="checkbox inline">
+                <span class="badge badge-success">16</span>&nbsp;
+                  <input type="text" name="home[pp]" class="input-hipermini" />
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">17</span>&nbsp;
+                <input type="text" name="home[qq]" class="input-hipermini" />
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">18</span>&nbsp;
+                <input type="text" name="home[rr]" class="input-hipermini" />
+              </label>
+              </div>
+              <br>
+
+             <div class="control-group">    
+               <div class="controls">
+                <label class="radio inline">
+              <span class="badge badge-warning">15</span>&nbsp;<%= f.radio_button :qtde_dezenas, "15", {:id => "r15"} %>
+                </label>
+                <label class="radio inline">
+              <span class="badge badge-warning">16</span>&nbsp;<%= f.radio_button :qtde_dezenas, "16", {:id => "r16"}%>
+                </label>
+                <label class="radio inline">
+              <span class="badge badge-warning">17</span>&nbsp;<%= f.radio_button :qtde_dezenas, "17", {:id => "r17"} %>
+                </label>
+                <label class="radio inline">
+              <span class="badge badge-warning">18</span>&nbsp;<%= f.radio_button :qtde_dezenas, "18", {:id => "r18"} %>
+                </label>
+              </div>  
             </div>
+                
+              <br><br>
+                <div class="control-group">    
+                  <div class="controls">
+                    <table class="table table-striped">
+                    <tr>
+                      <th>Pontuação</th>
+                      <th>Resultado</th>
+                      <th>Valor</th>
+                    </tr>
+                    <tr>
+                      <td>Total:</td>
+                      <td><span style="color:#1E90FF"><%= @resultado[0] %></span> resultados cadastrados</td>
+                      <td></td>
+                    </tr> 
+                    <tr>
+                      <td>09 pontos:</td>
+                      <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[1] %></span> acertos</td>
+                      <td><span style="color:#006400"><b>-</b></span></td>
+                    </tr>  
+                    <tr>
+                      <td>10 pontos:</td>
+                      <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[2] %></span> acertos</td>
+                      <td><span style="color:#006400"><b>-</b></span></td>
+                    </tr> 
+                    <tr>
+                      <td><b>11 pontos:</b></td>
+                      <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[3] %></span> acertos&nbsp;<a href="#" id="11pt" rel="tooltip" title="Concursos: <%= @resultado[8] %>"><i class="icon-search"></i></a></td>
+                      <td><span style="color:#006400"><b><%= number_to_currency(@resultado[14])%></b></span></td>
+                    </tr> 
+                    <tr>
+                      <td><b>12 pontos:</b></td>
+                      <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[4] %></span> acertos&nbsp;<a href="#" id="12pt" rel="tooltip" title="Concursos: <%= @resultado[9] %>"><i class="icon-search"></i></a></td>
+                      <td><span style="color:#006400"><b><%= number_to_currency(@resultado[15])%></b></span></td>
+                    </tr> 
+                    <tr>
+                      <td><b>13 pontos:</b></td>
+                      <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[5] %></span> acertos&nbsp;<a href="#" id="13pt" rel="tooltip" title="Concursos: <%= @resultado[10] %>"><i class="icon-search"></i></a></td>
+                      <td><span style="color:#006400"><b><%= number_to_currency(@resultado[16])%></b></span></td>
+                    </tr> 
+                    <tr>
+                      <td><b>14 pontos:</b></td>
+                      <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[6] %></span> acertos&nbsp;<a href="#" id="14pt" rel="tooltip" title="Concursos: <%= @resultado[11] %>"><i class="icon-search"></i></a></td>
+                      <td><span style="color:#006400"><b><%= number_to_currency(@resultado[17])%></b></span></td>
+                    </tr> 
+                    <tr>
+                      <td><b>15 pontos:</b></td>
+                      <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[7] %></span> acertos&nbsp;<a href="#" id="15pt" rel="tooltip" title="Concursos: <%= @resultado[12] %>"><i class="icon-search"></i></a></td>
+                      <td><span style="color:#006400"><b><%= number_to_currency(@resultado[18])%></b></span></td>
+                    </tr> 
+                    <tr>
+                      <td></td>
+                      <td><b>TOTAL</b></td>
+                      <td><span style="color:#006400"><b><%= number_to_currency(@resultado[19])%></b></span></td>
+                    </tr> 
+                    <tr>
+                      <td></td>
+                      <td><b>DESPESA</b></td>
+                      <td><span style="color:#red"><b><%= number_to_currency(@resultado[13])%></b></span></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td><b>RESULTADO</b></td>
+                      <td><span style="color:#006400"><b><%= number_to_currency(@resultado[20])%></b></span></td>
+                    </tr>
+
+                   </table>
+                  </div>
+                </div>  
+                <%= f.submit 'Verificar' , :class => "btn btn-primary" %>
         </div>
-     </td>
-   </tr>
-   <%= hidden_field_tag 'execute', true %>     
-   <tr>
-    <th><%= f.submit 'Gerar' , :class => "btn btn-primary" %></th>
-   </tr>
 
-	</table>
-<% end %>
-<br><br>
-<% if @jogos %>
-    <span><%= @jogos[0].total %> cartões</span>
+
+     </div> <!-- span6-->
+   </div> <!-- row-fluid -->
+ </div> <!-- span12-->
+</div> <!-- row-fluid -->
+
 <% end %>
 
- <br><br>
+<script> 
+$('#11pt').tooltip();
+$('#12pt').tooltip();
+$('#13pt').tooltip();
+$('#14pt').tooltip();
+$('#15pt').tooltip();
 
+
+
+
+</script>
