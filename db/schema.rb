@@ -19,21 +19,22 @@ ActiveRecord::Schema.define(:version => 20121203025625) do
   end
 
   create_table "lotofacils", :force => true do |t|
-    t.integer   "a"
-    t.integer   "b"
-    t.integer   "c"
-    t.integer   "d"
-    t.integer   "e"
-    t.integer   "f"
-    t.integer   "g"
-    t.integer   "h"
-    t.integer   "i"
-    t.integer   "j"
-    t.integer   "k"
-    t.integer   "l"
-    t.integer   "m"
-    t.integer   "n"
-    t.integer   "o"
+    t.integer  "posicao"
+    t.integer  "a"
+    t.integer  "b"
+    t.integer  "c"
+    t.integer  "d"
+    t.integer  "e"
+    t.integer  "f"
+    t.integer  "g"
+    t.integer  "h"
+    t.integer  "i"
+    t.integer  "j"
+    t.integer  "k"
+    t.integer  "l"
+    t.integer  "m"
+    t.integer  "n"
+    t.integer  "o"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -56,8 +57,10 @@ ActiveRecord::Schema.define(:version => 20121203025625) do
     t.integer  "m"
     t.integer  "n"
     t.integer  "o"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.decimal  "rateio_15",  :precision => 13, :scale => 2
+    t.decimal  "rateio_14",  :precision => 13, :scale => 2
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
 end

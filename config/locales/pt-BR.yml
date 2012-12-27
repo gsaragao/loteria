@@ -6,6 +6,7 @@
     nome_completo: Loteria - 2013
     menu: 
       home: Home
+      analise: Análise
 
   home:
     titulo: Painel Geral

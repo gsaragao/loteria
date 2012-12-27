@@ -18,6 +18,8 @@ class CreateResultados < ActiveRecord::Migration
       t.integer :m
       t.integer :n
       t.integer :o
+      t.decimal :rateio_15, :precision => 13, :scale => 2
+      t.decimal :rateio_14, :precision => 13, :scale => 2
 
       t.timestamps
     end

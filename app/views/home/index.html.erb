@@ -1,110 +1,10 @@
 
-<%= form_for(@home, :html => { :method => :get, :class => 'form-horizontal' }, :url => home_index_path) do |f| %>
+<%= form_for(@home, :html => { :method => :post, :class => 'form-horizontal' }, :url => home_index_path) do |f| %>
 <div class="row">
   <div class="span18">
     <div class="row">
       <div class="span7"> 
 
-        <div class="control-group">    
-          
-           <div class="controls">
-              <label class="checkbox inline">
-                <span class="badge badge-info">01</span>&nbsp;
-                  <%= select_tag 'home[a]' , options_for_select((1..6).to_a,@home.a), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-              <label class="checkbox inline">
-                <span class="badge badge-info">02</span>&nbsp;
-                <%= select_tag 'home[b]', options_for_select((2..9).to_a,@home.b), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-              <label class="checkbox inline">
-                <span class="badge badge-info">03</span>&nbsp;
-                <%= select_tag 'home[c]', options_for_select((3..11).to_a,@home.c), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-              <label class="checkbox inline">
-                <span class="badge badge-info">04</span>&nbsp;
-                <%= select_tag 'home[d]', options_for_select((4..12).to_a,@home.d), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-              <label class="checkbox inline">
-                <span class="badge badge-info">05</span>&nbsp;
-                <%= select_tag 'home[e]', options_for_select((5..14).to_a,@home.e), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-              </div>
-             <div class="controls">
-              <label class="checkbox inline">
-                <span class="badge badge-info">06</span>&nbsp;
-                <%= select_tag 'home[f]', options_for_select((6..15).to_a,@home.f), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-              <label class="checkbox inline">
-                <span class="badge badge-info">07</span>&nbsp;
-                <%= select_tag 'home[g]', options_for_select((7..16).to_a,@home.g), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-              <label class="checkbox inline">
-                <span class="badge badge-info">08</span>&nbsp;
-                <%= select_tag 'home[h]', options_for_select((8..17).to_a,@home.h), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-              <label class="checkbox inline">
-                <span class="badge badge-info">09</span>&nbsp;
-                <%= select_tag 'home[i]', options_for_select((9..19).to_a,@home.i), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-              <label class="checkbox inline">
-                <span class="badge badge-info">10</span>&nbsp;
-                <%= select_tag 'home[j]', options_for_select((10..20).to_a,@home.j), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-            </div>
-             <div class="controls">
-              <label class="checkbox inline">
-                <span class="badge badge-info">11</span>&nbsp;
-                <%= select_tag 'home[k]', options_for_select((11..21).to_a,@home.k), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-              <label class="checkbox inline">
-                <span class="badge badge-info">12</span>&nbsp;
-                <%= select_tag 'home[l]', options_for_select((12..22).to_a,@home.l), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-              <label class="checkbox inline">
-                <span class="badge badge-info">13</span>&nbsp;
-                <%= select_tag 'home[m]', options_for_select((13..23).to_a,@home.m), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-              <label class="checkbox inline">
-                <span class="badge badge-info">14</span>&nbsp;
-                <%= select_tag 'home[n]', options_for_select((14..24).to_a,@home.n), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-              <label class="checkbox inline">
-                <span class="badge badge-info">15</span>&nbsp;
-                <%= select_tag 'home[o]', options_for_select((15..25).to_a,@home.o), {:multiple => true, :class => 'input-supermini', :size => 8} %>
-              </label>
-
-            </div>
-        </div>
-        <div class="control-group">    
-           <div class="controls">
-              <b>Mostrar cartões</b>&nbsp;<input type="checkbox" name="home[gerar]" value="0" /> 
-           </div>
-        </div>
-
-        <div class="row">
-          <div class="span7">
-            <%= f.submit 'Gerar' , :class => "btn btn-primary" %>
-          </div> <!-- span12-->
-        </div> <!-- row -->
-        <br><br>
-        <div class="row">
-          <div class="span7">
-            <% if @jogos %>
-            <table class="table table-striped">
-              <tr>
-                <th>Resultado</th>
-              </tr>
-              <tr>
-                <td>Total:&nbsp;<span style="color:#1E90FF"><%= @jogos[0].total %></span> cartões</td>
-              </tr> 
-             </table>
-            <% end %> 
-          </div> <!-- span7-->
-        </div> <!-- row -->
-
-
-     </div> <!-- span7-->
-     <div class="span7">
 
       <div class="control-group">    
            <div class="controls">
@@ -176,7 +76,7 @@
               <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-success">16</span>&nbsp;
-                  <%= f.text_field :pp, :class => 'input-hipermini' %>
+                <%= f.text_field :pp, :class => 'input-hipermini' %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-success">17</span>&nbsp;
@@ -190,6 +90,7 @@
               <br>
 
              <div class="control-group">    
+              <b>Qtde Dezenas:</b>
                <div class="controls">
                 <label class="radio inline">
               <span class="badge badge-warning">15</span>&nbsp;<%= f.radio_button :qtde_dezenas, "15", {:id => "r15"} %>
@@ -205,80 +106,125 @@
                 </label>
               </div>  
             </div>
-                
-              <br>
-                <div class="control-group">    
-                  <div class="controls">
-                    <table class="table table-striped">
-                    <tr>
-                      <th>Pontuação</th>
-                      <th>Resultado</th>
-                      <th>Valor</th>
-                    </tr>
-                    <tr>
-                      <td>Total:</td>
-                      <td><span style="color:#1E90FF"><%= @resultado[0] %></span> resultados cadastrados</td>
-                      <td></td>
-                    </tr> 
-                    <tr>
-                      <td>09 pontos:</td>
-                      <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[1] %></span> acertos</td>
-                      <td><span style="color:#006400"><b>-</b></span></td>
-                    </tr>  
-                    <tr>
-                      <td>10 pontos:</td>
-                      <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[2] %></span> acertos</td>
-                      <td><span style="color:#006400"><b>-</b></span></td>
-                    </tr> 
-                    <tr>
-                      <td><b>11 pontos:</b></td>
-                      <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[3] %></span> acertos&nbsp;<a href="#" id="11pt" rel="tooltip" title="Concursos: <%= @resultado[8] %>"><i class="icon-search"></i></a></td>
-                      <td><span style="color:#006400"><b><%= number_to_currency(@resultado[14])%></b></span></td>
-                    </tr> 
-                    <tr>
-                      <td><b>12 pontos:</b></td>
-                      <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[4] %></span> acertos&nbsp;<a href="#" id="12pt" rel="tooltip" title="Concursos: <%= @resultado[9] %>"><i class="icon-search"></i></a></td>
-                      <td><span style="color:#006400"><b><%= number_to_currency(@resultado[15])%></b></span></td>
-                    </tr> 
-                    <tr>
-                      <td><b>13 pontos:</b></td>
-                      <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[5] %></span> acertos&nbsp;<a href="#" id="13pt" rel="tooltip" title="Concursos: <%= @resultado[10] %>"><i class="icon-search"></i></a></td>
-                      <td><span style="color:#006400"><b><%= number_to_currency(@resultado[16])%></b></span></td>
-                    </tr> 
-                    <tr>
-                      <td><b>14 pontos:</b></td>
-                      <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[6] %></span> acertos&nbsp;<a href="#" id="14pt" rel="tooltip" title="Concursos: <%= @resultado[11] %>"><i class="icon-search"></i></a></td>
-                      <td><span style="color:#006400"><b><%= number_to_currency(@resultado[17])%></b></span></td>
-                    </tr> 
-                    <tr>
-                      <td><b>15 pontos:</b></td>
-                      <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[7] %></span> acertos&nbsp;<a href="#" id="15pt" rel="tooltip" title="Concursos: <%= @resultado[12] %>"><i class="icon-search"></i></a></td>
-                      <td><span style="color:#006400"><b><%= number_to_currency(@resultado[18])%></b></span></td>
-                    </tr> 
-                    <tr>
-                      <td></td>
-                      <td><b>TOTAL</b></td>
-                      <td><span style="color:#1E90FF"><b><%= number_to_currency(@resultado[19])%></b></span></td>
-                    </tr> 
-                    <tr>
-                      <td></td>
-                      <td><b>DESPESA</b></td>
-                      <td><span style="color:red"><b><%= number_to_currency(@resultado[13])%></b></span></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td><b>RESULTADO</b></td>
-                      <% if @resultado[20] && @resultado[20] >= 0 %>
-                        <td><span style="color:#1E90FF"><b><%= number_to_currency(@resultado[20])%></b></span></td>
-                      <% else %>  
-                        <td><span style="color:red"><b><%= number_to_currency(@resultado[20])%></b></span></td>
-                      <% end %>  
-                    </tr>
 
-                   </table>
-                  </div>
-                </div>  
-                <%= f.submit 'Verificar' , :class => "btn btn-primary" %>
+            <div class="control-group">    
+              <b>Concursos:</b>
+               <div class="controls">
+                <label class="radio inline">
+              <span class="badge badge-inverse">Todos</span>&nbsp;<%= f.radio_button :tipo_concurso, "T", {:id => "tipo_t"} %>
+                </label>
+                <label class="radio inline">
+              <span class="badge badge-inverse">Custom</span>&nbsp;<%= f.radio_button :tipo_concurso, "C", {:id => "tipo_c"} %>&nbsp;
+              <%= select_tag 'home[operador]', options_for_select(['=','>', '<', ':', ','],@home.operador), {:class => 'input-supermini'} %>
+
+              <%= f.text_field :concursos, :class => 'input-medium', :disabled => 'disabled' %>
+                </label>
+              </div>  
+            </div>
+
+            <div class="control-group">    
+              <b>Tipo de Conferência:</b>
+               <div class="controls">
+                <label class="radio inline">
+              <span class="badge badge-info">Manual</span>&nbsp;<%= f.radio_button :tipo_confere, "M", {:id => "tipo_m"} %>
+                </label>
+                <label class="radio inline">
+              <span class="badge badge-info">Planilha</span>&nbsp;<%= f.radio_button :tipo_confere, "A", {:id => "tipo_a"} %>&nbsp;
+              <%= f.text_field :nome_arquivo, :class => 'input-medium', :disabled => 'disabled' %>
+                </label>
+              </div>  
+            </div>
+                
+              
+        </div>
+        <%= f.submit 'Verificar' , :class => "btn btn-primary" %>
+     </div> <!-- span7-->
+     <div class="span7">
+
+      <div class="control-group">    
+        <br>
+          <div class="control-group">    
+            <div class="controls">
+              <table class="table table-striped">
+              <tr>
+                <th>Pontuação</th>
+                <th>Resultado</th>
+                <th>Valor</th>
+              </tr>
+              <tr>
+                <td>Total:</td>
+                <td><span style="color:#1E90FF"><%= @resultado[:qtde_jogos] %></span> resultados cadastrados</td>
+                <td></td>
+              </tr> 
+              <tr>
+                <td>Total:</td>
+                <td><span style="color:#1E90FF"><%= @resultado[:qtde_cartoes] %></span> cartões jogados</td>
+                <td><span style="color:red"><b><%= number_to_currency(@resultado[:despesa])%></b></span></td>
+              </tr>
+              <tr>
+                <td>08 pontos:</td>
+                <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[:pontos_8] %></span> acertos</td>
+                <td><span style="color:#006400"><b>-</b></span></td>
+              </tr>
+              <tr>
+                <td>09 pontos:</td>
+                <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[:pontos_9] %></span> acertos</td>
+                <td><span style="color:#006400"><b>-</b></span></td>
+              </tr>  
+              <tr>
+                <td>10 pontos:</td>
+                <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[:pontos_10] %></span> acertos</td>
+                <td><span style="color:#006400"><b>-</b></span></td>
+              </tr> 
+              <tr>
+                <td><b>11 pontos:</b></td>
+                <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[:pontos_11] %></span> acertos&nbsp;<a href="#" id="11pt" rel="tooltip" title="Concursos: <%= @resultado[:concurso11] %>"><i class="icon-search"></i></a></td>
+                <td><span style="color:#006400"><b><%= number_to_currency(@resultado[:total_11])%></b></span></td>
+              </tr> 
+              <tr>
+                <td><b>12 pontos:</b></td>
+                <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[:pontos_12] %></span> acertos&nbsp;<a href="#" id="12pt" rel="tooltip" title="Concursos: <%= @resultado[:concurso12] %>"><i class="icon-search"></i></a></td>
+                <td><span style="color:#006400"><b><%= number_to_currency(@resultado[:total_12])%></b></span></td>
+              </tr> 
+              <tr>
+                <td><b>13 pontos:</b></td>
+                <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[:pontos_13] %></span> acertos&nbsp;<a href="#" id="13pt" rel="tooltip" title="Concursos: <%= @resultado[:concurso13] %>"><i class="icon-search"></i></a></td>
+                <td><span style="color:#006400"><b><%= number_to_currency(@resultado[:total_13])%></b></span></td>
+              </tr> 
+              <tr>
+                <td><b>14 pontos:</b></td>
+                <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[:pontos_14] %></span> acertos&nbsp;<a href="#" id="14pt" rel="tooltip" title="Concursos: <%= @resultado[:concurso14] %>"><i class="icon-search"></i></a></td>
+                <td><span style="color:#006400"><b><%= number_to_currency(@resultado[:total_14])%></b></span></td>
+              </tr> 
+              <tr>
+                <td><b>15 pontos:</b></td>
+                <td style="color:#666"><span style="color:#1E90FF"><%= @resultado[:pontos_15] %></span> acertos&nbsp;<a href="#" id="15pt" rel="tooltip" title="Concursos: <%= @resultado[:concurso15] %>"><i class="icon-search"></i></a></td>
+                <td><span style="color:#006400"><b><%= number_to_currency(@resultado[:total_15])%></b></span></td>
+              </tr> 
+              <tr>
+                <td></td>
+                <td><b>TOTAL</b></td>
+                <td><span style="color:#1E90FF"><b><%= number_to_currency(@resultado[:total])%></b></span></td>
+              </tr> 
+              <tr>
+                <td></td>
+                <td><b>DESPESA</b></td>
+                <td><span style="color:red"><b><%= number_to_currency(@resultado[:despesa])%></b></span></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>RESULTADO</b></td>
+                <% if @resultado[:final] && @resultado[:final] >= 0 %>
+                  <td><span style="color:#1E90FF"><b><%= number_to_currency(@resultado[:final])%></b></span></td>
+                <% else %>  
+                  <td><span style="color:red"><b><%= number_to_currency(@resultado[:final])%></b></span></td>
+                <% end %>  
+              </tr>
+
+             </table>
+            </div>
+          </div>  
+          
         </div>
 
 
@@ -341,6 +287,30 @@ $('#r18').click(function() {
   $('#home_pp').removeAttr('disabled'); 
   $('#home_qq').removeAttr('disabled');  
   $('#home_rr').removeAttr('disabled'); 
+});
+
+if ($('#tipo_c').is('input:checked')) {
+  $('#home_concursos').removeAttr('disabled');  
+}
+
+if ($('#tipo_a').is('input:checked')) {
+  $('#home_nome_arquivo').removeAttr('disabled');
+}
+
+$('#tipo_t').click(function() { 
+  $('#home_concursos').attr('disabled','disabled');
+});
+
+$('#tipo_c').click(function() { 
+  $('#home_concursos').removeAttr('disabled');
+});
+
+$('#tipo_m').click(function() { 
+  $('#home_nome_arquivo').attr('disabled','disabled');
+});
+
+$('#tipo_a').click(function() { 
+  $('#home_nome_arquivo').removeAttr('disabled');
 });
 
 </script>

@@ -10,6 +10,7 @@ gem 'mysql2'
 gem 'devise'
 gem 'brdinheiro'
 gem 'roo'
+gem 'thin'
 #gem 'iconv'
 
 

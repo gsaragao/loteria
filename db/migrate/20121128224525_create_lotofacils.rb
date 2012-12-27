@@ -1,6 +1,7 @@
 class CreateLotofacils < ActiveRecord::Migration
   def change
     create_table :lotofacils do |t|
+      t.integer :posicao
       t.integer :a
       t.integer :b
       t.integer :c
