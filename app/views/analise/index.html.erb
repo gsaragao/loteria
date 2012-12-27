@@ -157,7 +157,7 @@
               <br>
 
              <div class="control-group">    
-              <b>Qtde Dezenas:</b>
+              <b>Transformar em:</b>
                <div class="controls">
                 <label class="radio inline">
               <span class="badge badge-warning">2</span>&nbsp;<%= f.radio_button :qtde_dezenas, "2", {:id => "r2"} %>
@@ -192,10 +192,12 @@
               <% if @resultado.size > 0 %>
                 <table class="table table-striped">
                 <tr>
+                  <th width="5%">#</th>
                   <th>Regras</th>
                 </tr>
-                  <% @resultado.each do |result| %>
+                  <% @resultado.each_with_index do |result, cont| %>
                     <tr>
+                      <td><span style="color:#1E90FF"><b><%= cont + 1 %></b></span></td>
                       <td><b><%= result %></b></td>
                     </tr> 
                   <% end %>  

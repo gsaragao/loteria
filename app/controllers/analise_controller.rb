@@ -14,7 +14,7 @@ class AnaliseController < ApplicationController
     end  
 
     if params[:commit] == 'Transformar'
-      #@jogos = Lotofacil.pesquisar(@home)
+      @resultado = Carrega.transformar(@home)
     end      
 
   end
