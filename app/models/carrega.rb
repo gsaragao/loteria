@@ -3,9 +3,10 @@ require 'roo'
 require 'iconv'
 class Carrega
 
-def rodar
+# Rotina para gravar os resultados da loteria no banco
+def gravar_resultado
 
-		oo = Openoffice.new("app/models/resultado.ods")
+		oo = Openoffice.new("app/models/planilha/resultado.ods")
 		#oo = Excel.new("dados.xls")
 		oo.default_sheet = oo.sheets.first
 
@@ -41,14 +42,15 @@ def rodar
 
 	end	
 
-	def self.confere(nome)
+	# Rotina de obter dados da planilha a partir de um nome de arquivo
+	def self.obter_dados_planilha(nome)
 
 		retorno = []
 
-		endereco = "app/models/" + nome
+		endereco = "app/models/planilha/" + nome
 
 		oo = Openoffice.new(endereco)
-		#oo = Excel.new("dados.xls")
+		#oo = Excel.new(endereco)
 		oo.default_sheet = oo.sheets.first
 
 		linhas = oo.last_row + 1
@@ -84,6 +86,7 @@ def rodar
 		retorno
 	end
 
+	# Rotina para transformar o universo de jogos
 	def self.transformar(home)
 		
 		retorno = []
@@ -100,6 +103,15 @@ def rodar
 		universo_cartao[7] = home.hh if !home.hh.blank?
 		universo_cartao[8] = home.ii if !home.ii.blank?
 		universo_cartao[9] = home.jj if !home.jj.blank?
+
+		universo_cartao[10] = home.kk if !home.kk.blank?
+		universo_cartao[11] = home.ll if !home.ll.blank?
+		universo_cartao[12] = home.mm if !home.mm.blank?
+		universo_cartao[13] = home.nn if !home.nn.blank?
+		universo_cartao[14] = home.oo if !home.oo.blank?
+		universo_cartao[15] = home.pp if !home.pp.blank?
+		universo_cartao[16] = home.qq if !home.qq.blank?
+		universo_cartao[17] = home.rr if !home.rr.blank?
 
 		for a in 0..universo_cartao.size - 1
 		 for b in (a+1)..universo_cartao.size - 1
@@ -145,6 +157,68 @@ def rodar
     	end #for a
     	retorno
 	end
+
+# Rotina para gerar a base completa
+def self.gerar_base_completa
+	
+	universo_cartao = []
+  	
+  	for x in 1..25
+      universo_cartao << x
+  	end	
+
+	 for a in 0..universo_cartao.size - 1
+	   for b in (a+1)..universo_cartao.size - 1
+        for c in (b+1)..universo_cartao.size - 1
+          for d in (c+1)..universo_cartao.size - 1
+            for e in (d+1)..universo_cartao.size - 1
+              for f in (e+1)..universo_cartao.size - 1
+                for g in (f+1)..universo_cartao.size - 1
+                  for h in (g+1)..universo_cartao.size - 1
+                    for i in (h+1)..universo_cartao.size - 1
+                      for j in (i+1)..universo_cartao.size - 1
+                        for k in (j+1)..universo_cartao.size - 1
+                          for l in (k+1)..universo_cartao.size - 1
+                            for m in (l+1)..universo_cartao.size - 1
+                              for n in (m+1)..universo_cartao.size - 1
+                                for o in (n+1)..universo_cartao.size - 1
+
+     								lotofacil = Lotofacil.new
+
+     								lotofacil.a = universo_cartao[a] 
+									lotofacil.b = universo_cartao[b] 
+									lotofacil.c = universo_cartao[c]  
+									lotofacil.d = universo_cartao[d]  
+									lotofacil.e = universo_cartao[e] 
+									lotofacil.f = universo_cartao[f] 
+									lotofacil.g = universo_cartao[g] 
+									lotofacil.h = universo_cartao[h] 
+									lotofacil.i = universo_cartao[i] 
+									lotofacil.j = universo_cartao[j] 
+									lotofacil.k = universo_cartao[k] 
+									lotofacil.l = universo_cartao[l] 
+									lotofacil.m = universo_cartao[m] 
+									lotofacil.n = universo_cartao[n] 
+									lotofacil.o = universo_cartao[o] 
+									lotofacil.save    	                         
+
+                                end
+                              end  
+                            end
+                          end
+                        end 
+                      end       
+                    end
+                  end  
+                end
+              end
+            end 
+          end       
+        end
+      end  
+    end
+
+end
 
 
 end

@@ -16,7 +16,7 @@ class HomeController < ApplicationController
       if @home.tipo_confere == 'M'
         lista << @home
       elsif @home.tipo_confere == 'A'
-        lista = Carrega.confere(@home.nome_arquivo)
+        lista = Carrega.obter_dados_planilha(@home.nome_arquivo)
       end      
       
       @resultado = Resultado.verificar(lista, @home)

@@ -18,5 +18,5 @@ pickle-email-*.html
 *.swp
 config/database.yml
 public/assets
-*.ods*
-*.xls*
+*.ods
+*.xls

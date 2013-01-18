@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121203025625) do
+ActiveRecord::Schema.define(:version => 20121229131715) do
 
   create_table "homes", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -35,8 +35,14 @@ ActiveRecord::Schema.define(:version => 20121203025625) do
     t.integer  "m"
     t.integer  "n"
     t.integer  "o"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+    t.integer  "pontos_15"
+    t.integer  "pontos_14"
+    t.integer  "pontos_13"
+    t.integer  "pontos_12"
+    t.integer  "pontos_11"
+    t.decimal  "total_premio", :precision => 13, :scale => 2
   end
 
   create_table "resultados", :force => true do |t|

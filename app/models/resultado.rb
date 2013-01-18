@@ -2,8 +2,8 @@
 class Resultado < ActiveRecord::Base
   attr_accessible :concurso, :data, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :rateio_15, :rateio_14
 
-
-  def self.verificar(lista, home)
+  # Rotina que verifica os pontos ganhos na aposta
+  def self.verificar(lista, home, arr_resultados = nil)
 
   	resultado = {}
   	resultado[:concurso11] = []
@@ -27,38 +27,8 @@ class Resultado < ActiveRecord::Base
 		resultado[:total] = 0
 		resultado[:final] = 0
 		resultado[:despesa] = 0
-  	
-  	lista.each { |obj|
-		
-	  	jogo = []
-	  	jogo[0] = obj.aa
-	  	jogo[1] = obj.bb
-	  	jogo[2] = obj.cc
-	  	jogo[3] = obj.dd
-	  	jogo[4] = obj.ee
-	  	jogo[5] = obj.ff
-	  	jogo[6] = obj.gg
-	  	jogo[7] = obj.hh
-	  	jogo[8] = obj.ii
-	  	jogo[9] = obj.jj
-	  	jogo[10] = obj.kk
-	  	jogo[11] = obj.ll
-	  	jogo[12] = obj.mm
-	  	jogo[13] = obj.nn
-	  	jogo[14] = obj.oo
-	  	jogo[15] = obj.pp if home.qtde_dezenas.to_i > 15
-			jogo[16] = obj.qq if home.qtde_dezenas.to_i > 16
-			jogo[17] = obj.rr if home.qtde_dezenas.to_i > 17
-
-	  	premio11 = 2.5
-			premio12 = 5
-			premio13 = 12.5
-			custo15 = 1.25
-			custo16 = 16
-			custo17 = 170
-			custo18 = 1020
-
-	    resultados = []
+  		cont_cartao = 1
+		resultados = []
 
 	    if home.tipo_concurso == 'T'
 	    	resultados = Resultado.all 	
@@ -80,8 +50,42 @@ class Resultado < ActiveRecord::Base
 	    		resultados = Resultado.where('concurso in (?)', home.concursos.split(","))	
 	    	end			
 
+	    elsif home.tipo_concurso == 'A'
+	    	resultados = arr_resultados
 	    end	
-	    	
+
+  	lista.each { |obj| 
+		
+  		puts "Cartão verificado: #{cont_cartao}"
+  		cont_cartao += 1
+	  	jogo = []
+	  	jogo[0] = obj.aa
+	  	jogo[1] = obj.bb
+	  	jogo[2] = obj.cc
+	  	jogo[3] = obj.dd
+	  	jogo[4] = obj.ee
+	  	jogo[5] = obj.ff
+	  	jogo[6] = obj.gg
+	  	jogo[7] = obj.hh
+	  	jogo[8] = obj.ii
+	  	jogo[9] = obj.jj
+	  	jogo[10] = obj.kk
+	  	jogo[11] = obj.ll
+	  	jogo[12] = obj.mm
+	  	jogo[13] = obj.nn
+	  	jogo[14] = obj.oo
+	  	jogo[15] = obj.pp if home.qtde_dezenas.to_i > 15
+			jogo[16] = obj.qq if home.qtde_dezenas.to_i > 16
+			jogo[17] = obj.rr if home.qtde_dezenas.to_i > 17
+
+	  	    premio11 = 2.5
+			premio12 = 5
+			premio13 = 12.5
+			custo15 = 1.25
+			custo16 = 16
+			custo17 = 170
+			custo18 = 1020
+
 			resultado[:qtde_jogos] = resultados.size
 		
 			resultados.each {|result|
@@ -198,22 +202,20 @@ class Resultado < ActiveRecord::Base
 		
 			if (jogo.size == 15)
 				resultado[:despesa] += custo15 * resultados.size
-		  elsif (jogo.size == 16)
+		    elsif (jogo.size == 16)
 				resultado[:despesa] += custo16 * resultados.size
 			elsif (jogo.size == 17)
 				resultado[:despesa] += custo17 * resultados.size
 			elsif (jogo.size == 18)
 	 		  resultado[:despesa] += custo18 * resultados.size
 			end	
-
-	    resultado[:total] += resultado[:total_11] + resultado[:total_12] + resultado[:total_13] + resultado[:total_14] + 
-	    						resultado[:total_15]
-	    resultado[:final] += resultado[:total] - resultado[:despesa]
+	    
 	  }  
-
-	  resultado[:qtde_cartoes] = lista.size * resultado[:qtde_jogos]
+	  resultado[:total] += resultado[:total_11] + resultado[:total_12] + resultado[:total_13] + resultado[:total_14] + 
+	    						resultado[:total_15]
+	  resultado[:final] += resultado[:total] - resultado[:despesa]
+	  resultado[:qtde_cartoes] = lista.size
 		resultado
   end	
-
 
 end
