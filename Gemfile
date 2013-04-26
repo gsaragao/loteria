@@ -2,17 +2,25 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
+ruby '1.9.3', :engine => 'jruby', :engine_version => '1.7.3'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem "activerecord-jdbcmysql-adapter"
 
+gem "will_paginate", "~> 3.0.3"
 gem 'devise'
 gem 'brdinheiro'
-gem 'roo'
-gem 'thin'
+gem "roo", "~> 1.11.2"
 #gem 'iconv'
+gem 'puma'
 
+gem "exception_notification", :git => "git://github.com/smartinez87/exception_notification.git", :require => "exception_notifier"
+
+group :development do
+   gem 'better_errors'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -5,6 +5,8 @@ Loteria::Application.routes.draw do
 
   resources :analise, :only => [:index]
   match '/analise' => 'analise#index', :via => :post
+  	
+  resources :transforme, :only => [:index]
 
   root :to => 'home#index'
 end

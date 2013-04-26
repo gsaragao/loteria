@@ -56,7 +56,7 @@ class Resultado < ActiveRecord::Base
 
   	lista.each { |obj| 
 		
-  		puts "Cartão verificado: #{cont_cartao}"
+  		#puts "Cartão verificado: #{cont_cartao}"
   		cont_cartao += 1
 	  	jogo = []
 	  	jogo[0] = obj.aa

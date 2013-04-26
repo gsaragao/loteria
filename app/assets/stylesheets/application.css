@@ -6,4 +6,5 @@
  *= require bootstrap-responsive
  *= require bootstrap-custom
  *= require home
+ *= require paginate
 */

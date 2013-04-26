@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121229131715) do
+ActiveRecord::Schema.define(:version => 20130125101324) do
 
   create_table "homes", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -43,6 +43,93 @@ ActiveRecord::Schema.define(:version => 20121229131715) do
     t.integer  "pontos_12"
     t.integer  "pontos_11"
     t.decimal  "total_premio", :precision => 13, :scale => 2
+  end
+
+  create_table "lotofacils16", :force => true do |t|
+    t.integer  "posicao"
+    t.integer  "a"
+    t.integer  "b"
+    t.integer  "c"
+    t.integer  "d"
+    t.integer  "e"
+    t.integer  "f"
+    t.integer  "g"
+    t.integer  "h"
+    t.integer  "i"
+    t.integer  "j"
+    t.integer  "k"
+    t.integer  "l"
+    t.integer  "m"
+    t.integer  "n"
+    t.integer  "o"
+    t.integer  "p"
+    t.integer  "pontos_15"
+    t.integer  "pontos_14"
+    t.integer  "pontos_13"
+    t.integer  "pontos_12"
+    t.integer  "pontos_11"
+    t.decimal  "total_premio", :precision => 13, :scale => 2
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+  end
+
+  create_table "lotofacils17", :force => true do |t|
+    t.integer  "posicao"
+    t.integer  "a"
+    t.integer  "b"
+    t.integer  "c"
+    t.integer  "d"
+    t.integer  "e"
+    t.integer  "f"
+    t.integer  "g"
+    t.integer  "h"
+    t.integer  "i"
+    t.integer  "j"
+    t.integer  "k"
+    t.integer  "l"
+    t.integer  "m"
+    t.integer  "n"
+    t.integer  "o"
+    t.integer  "p"
+    t.integer  "q"
+    t.integer  "pontos_15"
+    t.integer  "pontos_14"
+    t.integer  "pontos_13"
+    t.integer  "pontos_12"
+    t.integer  "pontos_11"
+    t.decimal  "total_premio", :precision => 13, :scale => 2
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+  end
+
+  create_table "lotofacils18", :force => true do |t|
+    t.integer  "posicao"
+    t.integer  "a"
+    t.integer  "b"
+    t.integer  "c"
+    t.integer  "d"
+    t.integer  "e"
+    t.integer  "f"
+    t.integer  "g"
+    t.integer  "h"
+    t.integer  "i"
+    t.integer  "j"
+    t.integer  "k"
+    t.integer  "l"
+    t.integer  "m"
+    t.integer  "n"
+    t.integer  "o"
+    t.integer  "p"
+    t.integer  "q"
+    t.integer  "r"
+    t.integer  "pontos_15"
+    t.integer  "pontos_14"
+    t.integer  "pontos_13"
+    t.integer  "pontos_12"
+    t.integer  "pontos_11"
+    t.decimal  "total_premio", :precision => 13, :scale => 2
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
   end
 
   create_table "resultados", :force => true do |t|

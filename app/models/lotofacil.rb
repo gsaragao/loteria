@@ -73,6 +73,7 @@ class Lotofacil < ActiveRecord::Base
 			jogo.save
 
 			puts "Cartão: #{cont}"
+			puts "ID do jogo: #{jogo.id}"
 			cont += 1
 
     }

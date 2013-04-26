@@ -6,5 +6,8 @@ inflect.singular /^([a-zA-z]*)ais$/i, '\1al'
 #   inflect.irregular 'person', 'people'
 #   inflect.uncountable %w( fish sheep )
 #  inflect.irregular 'unidade', 'unidades'
-inflect.irregular 'cmp_produtoservico', 'cmp_produtoservico'
+inflect.irregular 'lotofacil16', 'lotofacils16'
+inflect.irregular 'lotofacil17', 'lotofacils17'
+inflect.irregular 'lotofacil18', 'lotofacils18'
+inflect.irregular 'transforme', 'transforme'
  end

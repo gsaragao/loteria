@@ -7,16 +7,10 @@ class AnaliseController < ApplicationController
   def index
     @home = Home.new(params[:home])
     default_values
-     @resultado = [] 
 
     if params[:commit] == 'Gerar'
       @jogos = Lotofacil.pesquisar(@home)
     end  
-
-    if params[:commit] == 'Transformar'
-      @resultado = Carrega.transformar(@home)
-    end      
-
   end
 
   private
@@ -26,7 +20,7 @@ class AnaliseController < ApplicationController
   end
 
   def default_values
- 
+    
     if @home.a.blank?
        @home.a = [1,2]
     end  
