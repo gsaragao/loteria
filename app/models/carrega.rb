@@ -65,24 +65,24 @@ class Carrega
 
 				home = []
 
-				home[0] = oo.cell(line,'A') 
-				home[1] = oo.cell(line,'B') 
-				home[2] = oo.cell(line,'C')  
-				home[3] = oo.cell(line,'D')  
-				home[4] = oo.cell(line,'E') 
-				home[5] = oo.cell(line,'F') 
-				home[6] = oo.cell(line,'G') 
-				home[7] = oo.cell(line,'H') 
-				home[8] = oo.cell(line,'I') 
-				home[9] = oo.cell(line,'J') 
-				home[10] = oo.cell(line,'K') 
-				home[11] = oo.cell(line,'L') 
-				home[12] = oo.cell(line,'M') 
-				home[13] = oo.cell(line,'N') 
-				home[14] = oo.cell(line,'O') 
-				home[15] = oo.cell(line,'P') if oo.cell(line,'P')
-				home[16] = oo.cell(line,'Q') if oo.cell(line,'Q')
-				home[17] = oo.cell(line,'R') if oo.cell(line,'R')
+				home[0] = oo.cell(line,'A').to_i 
+				home[1] = oo.cell(line,'B').to_i 
+				home[2] = oo.cell(line,'C').to_i  
+				home[3] = oo.cell(line,'D').to_i  
+				home[4] = oo.cell(line,'E').to_i 
+				home[5] = oo.cell(line,'F').to_i 
+				home[6] = oo.cell(line,'G').to_i 
+				home[7] = oo.cell(line,'H').to_i 
+				home[8] = oo.cell(line,'I').to_i 
+				home[9] = oo.cell(line,'J').to_i 
+				home[10] = oo.cell(line,'K').to_i 
+				home[11] = oo.cell(line,'L').to_i 
+				home[12] = oo.cell(line,'M').to_i 
+				home[13] = oo.cell(line,'N').to_i 
+				home[14] = oo.cell(line,'O').to_i 
+				home[15] = oo.cell(line,'P').to_i if oo.cell(line,'P')
+				home[16] = oo.cell(line,'Q').to_i if oo.cell(line,'Q')
+				home[17] = oo.cell(line,'R').to_i if oo.cell(line,'R')
 
 				retorno << home
 			end	

@@ -30,23 +30,29 @@ class HomeController < ApplicationController
         connSelect = java.sql.DriverManager.get_connection(userurl, "root", "1234")
 
         m = Verificador.new
-        teste = m.executar(lista, connSelect, 15, "T", "=", "1")
-        puts teste[0]
-        puts teste[1]
-        puts teste[2]
-        puts teste[3]
-        puts teste[4]
-        puts teste[5]
-        puts teste[6]
-        puts teste[7]
-        puts teste[8]
-        puts teste[9]
-        puts teste[10]
-        puts teste[11]
-        puts teste[12]
-        puts teste[13]
-        puts teste[14]
-        puts teste[15]
+        saida = m.executar(lista, connSelect, 15, lista.size , "T", "=", "1")
+        @resultado[:concurso11] = []
+        @resultado[:concurso12] = []
+        @resultado[:concurso13] = []
+        @resultado[:concurso14] = []
+        @resultado[:concurso15] = []
+        @resultado[:pontos_8] = saida[0]
+        @resultado[:pontos_9] = saida[1]
+        @resultado[:pontos_10] = saida[2]
+        @resultado[:pontos_11] = saida[3]
+        @resultado[:pontos_12] = saida[4]
+        @resultado[:pontos_13] = saida[5]
+        @resultado[:pontos_14] = saida[6]
+        @resultado[:pontos_15] = saida[7]
+        @resultado[:total_11] = saida[8]
+        @resultado[:total_12] = saida[9]
+        @resultado[:total_13] = saida[10]
+        @resultado[:total_14] = saida[11]
+        @resultado[:total_15] = saida[12]
+        @resultado[:despesa] = saida[13]
+        @resultado[:total] = saida[14]
+        @resultado[:final] = saida[15]
+        @resultado[:qtde_cartoes] = lista.size
       end      
       
     end    
