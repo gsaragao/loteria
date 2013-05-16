@@ -6,12 +6,12 @@ class Gravacao
 
 # Rotina para gravar os resultados da loteria no banco
  def self.gravar_resultado
-		oo = Roo::Openoffice.new("app/models/planilha/resultado.ods")
+		oo = Roo::Openoffice.new("app/models/planilha/resultado2.ods")
 		#oo = Roo::Excel.new("dados.xls")
 		oo.sheet(0)
 
 		puts 'Vai rodar!'
-=begin
+
 		1.upto(oo.last_row) do |line|
 			resultado = Resultado.new
 
@@ -39,7 +39,6 @@ class Gravacao
 				resultado.save
 			end
 		end
-=end
 		puts 'Terminou'
 	end	
 

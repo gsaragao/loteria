@@ -2,6 +2,16 @@
 class Resultado < ActiveRecord::Base
   attr_accessible :concurso, :data, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :rateio_15, :rateio_14
 
+  self.per_page = 10
+
+  def pesquisar(page)
+    Resultado.paginate(:conditions => conditions, :page => page).order("id desc")
+  end
+
+  def numeros
+  	 
+  end
+
   # Rotina que verifica os pontos ganhos na aposta
   def self.verificar(lista, home, arr_resultados = nil)
 
@@ -217,5 +227,32 @@ class Resultado < ActiveRecord::Base
 	  resultado[:qtde_cartoes] = lista.size
 		resultado
   end	
+
+private
+
+	def concurso_conditions
+    ["resultados.concurso = ?", "#{concurso}"] unless concurso.blank?
+  end
+
+  def data_conditions
+    ["resultados.data = ?", "#{data}"] unless data.blank?
+  end
+
+  def conditions
+    [conditions_clauses.join(' AND '), *conditions_options]
+  end
+
+  def conditions_clauses
+    conditions_parts.map { |condition| condition.first }
+  end
+
+  def conditions_options
+    conditions_parts.map { |condition| condition[1..-1] }.flatten
+  end
+
+  def conditions_parts
+    private_methods(false).grep(/_conditions$/).map { |m| send(m) }.compact
+  end
+
 
 end

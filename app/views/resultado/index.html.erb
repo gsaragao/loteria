@@ -1,0 +1,82 @@
+<br>
+<div class="row">
+  <div class="span16">
+    <%= form_for(@resultado, :html => { :method => :get, :class => 'form-horizontal' }, :url => resultado_index_path) do |f| %>
+
+  <table class="table table-striped">
+    <tr>
+    <th><%= t('resultado.concurso') %>&nbsp;<%= f.text_field :concurso, :class => 'input-small' %>&nbsp;&nbsp;
+        <%= t('resultado.data') %>&nbsp;<%= f.text_field :data, :class => 'mask-date input-small', :value => (I18n.l(@resultado.data) if @resultado.data) %> <a class="btn" href="#" onclick="return clean_date('#resultado_data');"><i class="icon-remove"></i></a>&nbsp;&nbsp;
+      <%= f.submit t('botao.pesquisar'), :class => "btn btn-primary" %></th>
+   </tr>
+  </table>
+<% end %>
+
+  <div class="control-group">    
+    <div class="controls">
+
+      <% if @resultados.size > 0  %>
+       <table class="table table-striped">
+        <tr>
+          <th width="7%"><%= t('resultado.concurso')%></th>
+          <th width="10%"><%= t('resultado.data')%></th>
+          <th width="3%">A</th>
+          <th width="3%">B</th>
+          <th width="3%">C</th>
+          <th width="3%">D</th>
+          <th width="3%">E</th>
+          <th width="3%">F</th>
+          <th width="3%">G</th>
+          <th width="3%">H</th>
+          <th width="3%">I</th>
+          <th width="3%">J</th>
+          <th width="3%">K</th>
+          <th width="3%">L</th>
+          <th width="3%">M</th>
+          <th width="3%">N</th>
+          <th width="5%">O</th>
+          <th width="12%">Rateio 15</th>
+          <th width="10%">Rateio 14</th>
+          <th></th>
+          <th></th>
+        </tr>
+
+       <% @resultados.each do |resultado| %>
+        <tr>
+          <td style="color:#1E90FF"><%= resultado.concurso %></td>
+          <td style="color:#666"><%= I18n.l(resultado.data) if resultado.data %></td>
+          <td><%= resultado.a %></td>
+          <td><%= resultado.b %></td>
+          <td><%= resultado.c %></td>
+          <td><%= resultado.d %></td>
+          <td><%= resultado.e %></td>
+          <td><%= resultado.f %></td>
+          <td><%= resultado.g %></td>
+          <td><%= resultado.h %></td>
+          <td><%= resultado.i %></td>
+          <td><%= resultado.j %></td>
+          <td><%= resultado.k %></td>
+          <td><%= resultado.l %></td>
+          <td><%= resultado.m %></td>
+          <td><%= resultado.n %></td>
+          <td><%= resultado.o %></td>
+          <td><span style="color:#006400"><b><%= number_to_currency(resultado.rateio_15) %></b></span></td>
+          <td><span style="color:#006400"><b><%= number_to_currency(resultado.rateio_14) %></b></span></td>
+          <td><%= link_to t('botao.editar'), edit_resultado_path(resultado), :class => 'link-form' %></td>
+          <td><%= link_to t('botao.excluir'), resultado, 
+        confirm: 'Tem certeza que deseja excluir este registro?', method: :delete, :class => 'link-form' %></td>
+        </tr>
+       <% end %>
+       </table>
+        <div class="apple_pagination">
+            <%= will_paginate @resultados, :container => false, :next_label => 'Próximo', :previous_label => 'Anterior' %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>  
+
+ </div> <!-- span16-->
+</div> <!-- row-fluid -->
+
+

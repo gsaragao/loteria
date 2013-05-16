@@ -8,5 +8,7 @@ Loteria::Application.routes.draw do
   	
   resources :transforme, :only => [:index]
 
+  resources :resultado
+
   root :to => 'home#index'
 end

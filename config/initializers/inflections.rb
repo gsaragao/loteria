@@ -10,4 +10,5 @@ inflect.irregular 'lotofacil16', 'lotofacils16'
 inflect.irregular 'lotofacil17', 'lotofacils17'
 inflect.irregular 'lotofacil18', 'lotofacils18'
 inflect.irregular 'transforme', 'transforme'
+inflect.irregular 'resultado', 'resultados'
  end
