@@ -27,7 +27,10 @@
     usuario: Usuário
     data_criacao: Data Criação
   
-      
+  resultado:
+    acao:
+      novo: Novo Resultado
+
   botao:
     criar: Criar
     salvar: Salvar

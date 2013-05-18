@@ -1,0 +1,123 @@
+<%= form_for @resultado , :html => {:class => 'form-horizontal'}, :url => resultado_index_path  do |f| %>
+<% if @resultado.errors.any? %>
+<fieldset id="erros">
+   <div class="ui-state-error ui-corner-all" style="padding: 5px; width: 50%">
+     <h4><%= t('errors.messages.titulo') %>:</h4>
+     <br>
+     <ul>
+       <% @resultado.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+     </ul>
+   </div>
+</fieldset>
+<% end %>
+<br>
+<div class="row-fluid">
+	<div class="span12">
+    <div class="row-fluid">
+      <div class="span7"> 
+
+        <div class="control-group">    
+           <div class="controls">
+              <label class="checkbox inline">
+                <span class="badge badge-success">01</span>&nbsp;
+                <%= f.text_field :a, :class => 'input-hipermini' %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">02</span>&nbsp;
+                <%= f.text_field :b, :class => 'input-hipermini' %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">03</span>&nbsp;
+                <%= f.text_field :c, :class => 'input-hipermini' %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">04</span>&nbsp;
+                <%= f.text_field :d, :class => 'input-hipermini' %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">05</span>&nbsp;
+                <%= f.text_field :e, :class => 'input-hipermini' %>
+              </label>
+            </div>
+             <div class="controls">
+              <label class="checkbox inline">
+                <span class="badge badge-success">06</span>&nbsp;
+                  <%= f.text_field :f, :class => 'input-hipermini' %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">07</span>&nbsp;
+                <%= f.text_field :g, :class => 'input-hipermini' %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">08</span>&nbsp;
+                <%= f.text_field :h, :class => 'input-hipermini' %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">09</span>&nbsp;
+                <%= f.text_field :i, :class => 'input-hipermini' %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">10</span>&nbsp;
+                <%= f.text_field :j, :class => 'input-hipermini' %>
+              </label>
+             </div>
+             <div class="controls">
+              <label class="checkbox inline">
+                <span class="badge badge-success">11</span>&nbsp;
+                  <%= f.text_field :k, :class => 'input-hipermini' %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">12</span>&nbsp;
+                <%= f.text_field :l, :class => 'input-hipermini' %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">13</span>&nbsp;
+                <%= f.text_field :m, :class => 'input-hipermini' %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">14</span>&nbsp;
+                <%= f.text_field :n, :class => 'input-hipermini' %>
+              </label>
+              <label class="checkbox inline">
+                <span class="badge badge-success">15</span>&nbsp;
+                <%= f.text_field :o, :class => 'input-hipermini' %>
+              </label>
+            </div>
+            <br>
+               <div class="controls"><b>Concurso</b>
+                 <%= f.text_field :concurso, :class => 'input-small' %>
+               </div>
+            <br>   
+               <div class="controls"><b>Data</b>
+                 <%= f.text_field :data, :class => 'mask-date input-small', :value => (I18n.l(@resultado.data) if @resultado.data) %> <a class="btn" href="#" onclick="return clean_date('#resultado_data');"><i class="icon-remove"></i></a>
+               </div>
+            <br>   
+            <div class="controls"><b>Rateio 15</b>
+                 <%= f.text_field :rateio_15, :class => 'mask-money input-medium', :value => (@resultado.rateio_15.real if @resultado.rateio_15) %>
+            </div>
+            <br>
+            <div class="controls"><b>Rateio 14</b>
+                 <%= f.text_field :rateio_14, :class => 'mask-money input-medium', :value => (@resultado.rateio_14.real if @resultado.rateio_14) %>
+            </div>
+
+          </div>
+      </div> <!-- span7 -->
+    </div> <!-- row-fluid -->
+
+
+  <div class="form-actions">
+    <%= f.submit t('botao.salvar'), :class => "btn btn-primary" %>&nbsp;
+    <a class="btn" href="<%= resultado_index_path %>"><%= t('botao.cancelar')%></a>
+  </div>
+
+  </div> <!-- span12 --> 
+</div> <!-- row-fluid root --> 
+  
+<% end %>
+
+<script>
+ $('#resultado_a').focus();
+
+</script>

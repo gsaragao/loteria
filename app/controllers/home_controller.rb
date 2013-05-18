@@ -30,28 +30,33 @@ class HomeController < ApplicationController
         connSelect = java.sql.DriverManager.get_connection(userurl, "root", "1234")
 
         m = Verificador.new
-        saida = m.executar(lista, connSelect, 15, lista.size , "T", "=", "1")
-        @resultado[:concurso11] = []
-        @resultado[:concurso12] = []
-        @resultado[:concurso13] = []
-        @resultado[:concurso14] = []
-        @resultado[:concurso15] = []
-        @resultado[:pontos_8] = saida[0]
-        @resultado[:pontos_9] = saida[1]
-        @resultado[:pontos_10] = saida[2]
-        @resultado[:pontos_11] = saida[3]
-        @resultado[:pontos_12] = saida[4]
-        @resultado[:pontos_13] = saida[5]
-        @resultado[:pontos_14] = saida[6]
-        @resultado[:pontos_15] = saida[7]
-        @resultado[:total_11] = saida[8]
-        @resultado[:total_12] = saida[9]
-        @resultado[:total_13] = saida[10]
-        @resultado[:total_14] = saida[11]
-        @resultado[:total_15] = saida[12]
-        @resultado[:despesa] = saida[13]
-        @resultado[:total] = saida[14]
-        @resultado[:final] = saida[15]
+        saida = m.executar(lista, connSelect, @home.qtde_dezenas.to_i, lista.size , @home.tipo_concurso, @home.operador, @home.concursos)
+        
+        if saida
+          @resultado[:pontos_8] = saida[0]
+          @resultado[:pontos_9] = saida[1]
+          @resultado[:pontos_10] = saida[2]
+          @resultado[:pontos_11] = saida[3]
+          @resultado[:pontos_12] = saida[4]
+          @resultado[:pontos_13] = saida[5]
+          @resultado[:pontos_14] = saida[6]
+          @resultado[:pontos_15] = saida[7]
+          @resultado[:total_11] = saida[8]
+          @resultado[:total_12] = saida[9]
+          @resultado[:total_13] = saida[10]
+          @resultado[:total_14] = saida[11]
+          @resultado[:total_15] = saida[12]
+          @resultado[:despesa] = saida[13]
+          @resultado[:total] = saida[14]
+          @resultado[:final] = saida[15]
+          @resultado[:qtde_jogos] = saida[16]
+          @resultado[:concurso11] = saida[17]
+          @resultado[:concurso12] = saida[18]
+          @resultado[:concurso13] = saida[19]
+          @resultado[:concurso14] = saida[20]
+          @resultado[:concurso15] = saida[21]
+        end  
+        
         @resultado[:qtde_cartoes] = lista.size
       end      
       

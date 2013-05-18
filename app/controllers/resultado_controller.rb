@@ -31,7 +31,7 @@ class ResultadoController < ApplicationController
     
     if @resultado.save
       flash[:notice] = t('msg.create_sucess')
-      redirect_to resultados_path
+      redirect_to resultados_index_path
     else
       load_combos
       render :action => :new 
@@ -42,7 +42,7 @@ class ResultadoController < ApplicationController
   def update
     if @resultado.update_attributes(params[:resultado])
       flash[:notice] = t('msg.update_sucess')
-      redirect_to resultados_path
+      redirect_to resultados_index_path
     else
       load_combos
       render :action => :edit
@@ -57,7 +57,7 @@ class ResultadoController < ApplicationController
       flash[:alert] = @resultado.errors.full_messages[0]
     end
 
-    redirect_to resultados_path
+    redirect_to resultados_index_path
   end
   
   private
@@ -71,7 +71,7 @@ class ResultadoController < ApplicationController
       @resultado = Resultado.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       flash[:alert] = t('msg.data_not_found')
-      redirect_to resultados_path
+      redirect_to resultados_index_path
     end
   end
   
