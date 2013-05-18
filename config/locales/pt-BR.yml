@@ -7,6 +7,7 @@
     menu: 
       home: Home
       analise: Análise
+      premiacao: Premiação
 
   home:
     titulo: Painel Geral

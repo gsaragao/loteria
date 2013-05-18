@@ -5,6 +5,10 @@ class Resultado < ActiveRecord::Base
 
   self.per_page = 10
 
+  PREMIO11 = 2.5
+  PREMIO12 = 5
+  PREMIO13 = 12.5
+
   def pesquisar(page)
     Resultado.paginate(:conditions => conditions, :page => page).order("id desc")
   end
@@ -89,10 +93,7 @@ class Resultado < ActiveRecord::Base
 			jogo[16] = obj.qq if home.qtde_dezenas.to_i > 16
 			jogo[17] = obj.rr if home.qtde_dezenas.to_i > 17
 
-	  	    premio11 = 2.5
-			premio12 = 5
-			premio13 = 12.5
-			custo15 = 1.25
+	  	custo15 = 1.25
 			custo16 = 16
 			custo17 = 170
 			custo18 = 1020
@@ -139,13 +140,13 @@ class Resultado < ActiveRecord::Base
 					resultado[:concurso11] << result.concurso
 
 					if (home.qtde_dezenas.to_i == 15)
-						resultado[:total_11] += premio11
+						resultado[:total_11] += PREMIO11
 			    elsif (home.qtde_dezenas.to_i == 16)
-						resultado[:total_11] += 5 * premio11
+						resultado[:total_11] += 5 * PREMIO11
 					elsif (home.qtde_dezenas.to_i == 17)
-						resultado[:total_11] += 15 * premio11
+						resultado[:total_11] += 15 * PREMIO11
 					elsif (home.qtde_dezenas.to_i == 18)
-		 		    resultado[:total_11] += 35 * premio11
+		 		    resultado[:total_11] += 35 * PREMIO11
 					end	
 				end
 
@@ -154,13 +155,13 @@ class Resultado < ActiveRecord::Base
 					resultado[:concurso12] << result.concurso
 
 					if (home.qtde_dezenas.to_i == 15)
-						resultado[:total_12] += premio12
+						resultado[:total_12] += PREMIO12
 			    elsif (home.qtde_dezenas.to_i == 16)
-						resultado[:total_12] += (4 * premio12) + (12 * premio11)
+						resultado[:total_12] += (4 * PREMIO12) + (12 * PREMIO11)
 					elsif (home.qtde_dezenas.to_i == 17)
-						resultado[:total_12] += (10 * premio12) + (60 * premio11)
+						resultado[:total_12] += (10 * PREMIO12) + (60 * PREMIO11)
 					elsif (home.qtde_dezenas.to_i == 18)
-		 		    resultado[:total_12] += (20 * premio12) + (180 * premio11)
+		 		    resultado[:total_12] += (20 * PREMIO12) + (180 * PREMIO11)
 					end		
 				end
 
@@ -169,13 +170,13 @@ class Resultado < ActiveRecord::Base
 					resultado[:concurso13] << result.concurso
 
 					if (home.qtde_dezenas.to_i == 15)
-						resultado[:total_13] += premio13
+						resultado[:total_13] += PREMIO13
 				  elsif (home.qtde_dezenas.to_i == 16)
-						resultado[:total_13] += (3 * premio13) + (13 * premio12)
+						resultado[:total_13] += (3 * PREMIO13) + (13 * PREMIO12)
 					elsif (home.qtde_dezenas.to_i == 17)
-						resultado[:total_13] += (6 * premio13) + (52 * premio12) + (78 * premio11)
+						resultado[:total_13] += (6 * PREMIO13) + (52 * PREMIO12) + (78 * PREMIO11)
 					elsif (home.qtde_dezenas.to_i == 18)
-			      resultado[:total_13] += (10 * premio13) + (130 * premio12) + (390 * premio11)
+			      resultado[:total_13] += (10 * PREMIO13) + (130 * PREMIO12) + (390 * PREMIO11)
 					end		
 				end
 
@@ -186,11 +187,11 @@ class Resultado < ActiveRecord::Base
 					if (home.qtde_dezenas.to_i == 15)
 						resultado[:total_14] += result.rateio_14
 				  elsif (home.qtde_dezenas.to_i == 16)
-						resultado[:total_14] += (2 * result.rateio_14) + (14 * premio13) 
+						resultado[:total_14] += (2 * result.rateio_14) + (14 * PREMIO13) 
 					elsif (home.qtde_dezenas.to_i == 17)
-						resultado[:total_14] += (3 * result.rateio_14) + (42 * premio13) + (91 * premio12)
+						resultado[:total_14] += (3 * result.rateio_14) + (42 * PREMIO13) + (91 * PREMIO12)
 					elsif (home.qtde_dezenas.to_i == 18)
-			 	    resultado[:total_14] += (4 * result.rateio_14) + (84 * premio13) + (364 * premio12) + (364 * premio11)
+			 	    resultado[:total_14] += (4 * result.rateio_14) + (84 * PREMIO13) + (364 * PREMIO12) + (364 * PREMIO11)
 					end
 				end
 
@@ -203,9 +204,9 @@ class Resultado < ActiveRecord::Base
 				  elsif (home.qtde_dezenas.to_i == 16)
 						resultado[:total_15] += (result.rateio_15) + (15 * result.rateio_14) 
 					elsif (home.qtde_dezenas.to_i == 17)
-						resultado[:total_15] += (result.rateio_15) + (30 * result.rateio_14) + (105 * premio13)
+						resultado[:total_15] += (result.rateio_15) + (30 * result.rateio_14) + (105 * PREMIO13)
 					elsif (home.qtde_dezenas.to_i == 18)
-			 		  resultado[:total_15] += (result.rateio_15) + (45 * result.rateio_14) + (315 * premio13)  + (455 * premio12)
+			 		  resultado[:total_15] += (result.rateio_15) + (45 * result.rateio_14) + (315 * PREMIO13)  + (455 * PREMIO12)
 					end
 				end
 
