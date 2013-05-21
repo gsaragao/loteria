@@ -1,5 +1,6 @@
 # encoding: UTF-8
 class Resultado < ActiveRecord::Base
+  usar_como_dinheiro :rateio_15, :rateio_14
   attr_accessible :concurso, :data, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :rateio_15, :rateio_14
   validates_presence_of :concurso, :data, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :rateio_15, :rateio_14
 
@@ -13,8 +14,12 @@ class Resultado < ActiveRecord::Base
     Resultado.paginate(:conditions => conditions, :page => page).order("id desc")
   end
 
-  def numeros
-  	 
+  def self.media_15
+  	 find_by_sql("select round(sum(rateio_15) / count(*),2) rateio_15 from resultados")
+  end
+
+  def self.media_14
+  	 find_by_sql("select round(sum(rateio_14) / count(*),2) rateio_14 from resultados")
   end
 
   # Rotina que verifica os pontos ganhos na aposta

@@ -4,7 +4,7 @@ class ResultadoController < ApplicationController
   respond_to :html
   before_filter :setar_classe_menu
   before_filter :manage_params, :only => [:index]
-  before_filter :load_documento , :only => [:show, :edit, :update, :destroy]
+  before_filter :load_resultado , :only => [:show, :edit, :update, :destroy]
 
   def index
     @resultado = Resultado.new(params[:resultado])
@@ -18,12 +18,14 @@ class ResultadoController < ApplicationController
 
   def new
     load_combos
+    @action = "create"
     @resultado = Resultado.new
     respond_with @resultado
   end
 
   def edit
     load_combos
+    @action = "update"
   end
 
   def create
@@ -31,7 +33,7 @@ class ResultadoController < ApplicationController
     
     if @resultado.save
       flash[:notice] = t('msg.create_sucess')
-      redirect_to resultados_index_path
+      redirect_to resultado_index_path
     else
       load_combos
       render :action => :new 
@@ -42,7 +44,7 @@ class ResultadoController < ApplicationController
   def update
     if @resultado.update_attributes(params[:resultado])
       flash[:notice] = t('msg.update_sucess')
-      redirect_to resultados_index_path
+      redirect_to resultado_index_path
     else
       load_combos
       render :action => :edit
@@ -57,7 +59,7 @@ class ResultadoController < ApplicationController
       flash[:alert] = @resultado.errors.full_messages[0]
     end
 
-    redirect_to resultados_index_path
+    redirect_to resultado_index_path
   end
   
   private
@@ -71,7 +73,7 @@ class ResultadoController < ApplicationController
       @resultado = Resultado.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       flash[:alert] = t('msg.data_not_found')
-      redirect_to resultados_index_path
+      redirect_to resultado_index_path
     end
   end
   

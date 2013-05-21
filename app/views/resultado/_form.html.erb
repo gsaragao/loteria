@@ -1,4 +1,4 @@
-<%= form_for @resultado , :html => {:class => 'form-horizontal'}, :url => resultado_index_path  do |f| %>
+<%= form_for @resultado , :html => {:class => 'form-horizontal'}, :url => { :action => @action}   do |f| %>
 <% if @resultado.errors.any? %>
 <fieldset id="erros">
    <div class="ui-state-error ui-corner-all" style="padding: 5px; width: 50%">
