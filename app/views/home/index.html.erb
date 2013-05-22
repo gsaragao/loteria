@@ -230,12 +230,61 @@
 
      </div> <!-- span6-->
    </div> <!-- row-fluid -->
+   <div class="row">
+    <div class="span17">
+
+      <div id="hc" style="width:100%; height:400px;"></div>
+
+    </div>
+   </div> 
+
  </div> <!-- span12-->
 </div> <!-- row-fluid -->
 
 <% end %>
 
 <script> 
+
+<% if !@resultado[:categories].blank? %>
+
+Highcharts.setOptions({
+        chart: {
+            backgroundColor: {
+                linearGradient: [0, 0, 500, 500],
+                stops: [
+                    [0, 'rgb(255, 255, 255)'],
+                    [1, 'rgb(240, 240, 255)']
+                    ]
+            },
+            borderWidth: 2,
+            plotBackgroundColor: 'rgba(255, 255, 255, .9)',
+            plotShadow: true,
+            plotBorderWidth: 1
+        }
+    });
+    
+    var chart1 = new Highcharts.Chart({
+        chart: {
+            renderTo: 'hc',
+        },
+
+        title: {
+            text: 'Análise Histórica'
+        },
+
+        xAxis: {
+            name: 'Concurso',
+            categories: [<%= @resultado[:categories] %>]
+        },
+
+        series: [{
+            name: 'Prêmio',
+            data: [<%= @resultado[:data_series] %>],
+            
+        }]
+    });
+<% end %>
+    
 $('#11pt').tooltip();
 $('#12pt').tooltip();
 $('#13pt').tooltip();

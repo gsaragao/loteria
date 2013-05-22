@@ -14,14 +14,14 @@ class HomeController < ApplicationController
     @home = Home.new(params[:home])
     default_values
     @resultado = {}
-    
+
     if params[:commit] == 'Verificar'
 
       lista = []
 
       if @home.tipo_confere == 'M'
         lista << @home
-        @resultado = Resultado.verificar(lista, @home)
+        @resultado = Resultado.verificar(@home)
       elsif @home.tipo_confere == 'A'
         lista = Carrega.obter_dados_planilha_java(@home.nome_arquivo)
 
@@ -31,7 +31,7 @@ class HomeController < ApplicationController
 
         m = Verificador.new
         saida = m.executar(lista, connSelect, @home.qtde_dezenas.to_i, lista.size , @home.tipo_concurso, @home.operador, @home.concursos)
-        
+
         if saida
           @resultado[:pontos_8] = saida[0]
           @resultado[:pontos_9] = saida[1]
@@ -55,6 +55,8 @@ class HomeController < ApplicationController
           @resultado[:concurso13] = saida[19]
           @resultado[:concurso14] = saida[20]
           @resultado[:concurso15] = saida[21]
+          @resultado[:categories] = saida[22]
+          @resultado[:data_series] = saida[23]
         end  
         
         @resultado[:qtde_cartoes] = lista.size
