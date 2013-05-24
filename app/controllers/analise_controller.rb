@@ -9,7 +9,7 @@ class AnaliseController < ApplicationController
     default_values
 
     if params[:commit] == 'Gerar'
-      @jogos = Lotofacil.pesquisar(@home)
+      @jogos = Lotofacil.analisar(@home)
     end  
   end
 

@@ -1,0 +1,160 @@
+<br>
+<div class="row">
+  <div class="span18">
+    <%= form_for(@lotofacil, :html => { :method => :get, :class => 'form-horizontal' }, :url => lotofacil_index_path) do |f| %>
+
+      <div class="row">
+        <div class="span4">
+          <div class="control-group">
+            <b>Qtde Dezenas:</b>
+             <div class="controls">
+              <label class="radio inline">
+            <span class="badge badge-warning">15</span>&nbsp;<%= f.radio_button :qtde_dezenas, "15" %>
+              </label>
+              <label class="radio inline">
+            <span class="badge badge-warning">16</span>&nbsp;<%= f.radio_button :qtde_dezenas, "16" %>
+              </label>
+              <label class="radio inline">
+            <span class="badge badge-warning">17</span>&nbsp;<%= f.radio_button :qtde_dezenas, "17" %>
+              </label>
+              <label class="radio inline">
+            <span class="badge badge-warning">18</span>&nbsp;<%= f.radio_button :qtde_dezenas, "18" %>
+              </label>
+            </div>
+           </div> 
+        </div>
+       </div>
+        <div class="row">
+        <div class="span18">
+          <div class="control-group">
+          <b>Order:</b>
+             <div class="controls">
+              <label class="radio inline">
+                <span class="badge badge-info">Nenhum</span>&nbsp;<%= f.radio_button :order, "" %>
+              </label>
+              <label class="radio inline">
+                <span class="badge badge-info">11 Pontos</span>&nbsp;<%= f.radio_button :order, "pontos_11" %>
+              </label>
+              <label class="radio inline">
+                <span class="badge badge-info">12 Pontos</span>&nbsp;<%= f.radio_button :order, "pontos_12" %>
+              </label>
+              <label class="radio inline">
+                <span class="badge badge-info">13 Pontos</span>&nbsp;<%= f.radio_button :order, "pontos_13" %>
+              </label>
+              <label class="radio inline">
+                <span class="badge badge-info">14 Pontos</span>&nbsp;<%= f.radio_button :order, "pontos_14" %>
+              </label>
+              <label class="radio inline">
+                <span class="badge badge-info">15 Pontos</span>&nbsp;<%= f.radio_button :order, "pontos_15" %>
+              </label>
+              <label class="radio inline">
+                <span class="badge badge-info">Total Prêmio</span>&nbsp;<%= f.radio_button :order, "total_premio" %>
+              </label>
+            </div>
+           </div> 
+        <div>    
+     </div> <!-- row --> 
+      <div class="row">
+        <div class="span8">
+          <div class="control-group">
+          <b>Tipo Order:</b>
+             <div class="controls">
+              <label class="radio inline">
+                <span class="badge badge-success">ASC</span>&nbsp;<%= f.radio_button :ascdes, "ASC" %>
+              </label>
+              <label class="radio inline">
+                <span class="badge badge-success">DESC</span>&nbsp;<%= f.radio_button :ascdes, "DESC" %>
+              </label>
+            </div>
+           </div> 
+        <div>    
+     </div> <!-- row --> 
+
+<%= f.submit t('botao.pesquisar'), :class => "btn btn-primary" %>
+<% end %>
+<br><br>
+<div class="row">
+        <div class="span18">
+ 
+      <% if @jogos.size > 0  %>
+       <table class="table table-striped">
+        <tr>
+          <th width="3%">A</th>
+          <th width="3%">B</th>
+          <th width="3%">C</th>
+          <th width="3%">D</th>
+          <th width="3%">E</th>
+          <th width="3%">F</th>
+          <th width="3%">G</th>
+          <th width="3%">H</th>
+          <th width="3%">I</th>
+          <th width="3%">J</th>
+          <th width="3%">K</th>
+          <th width="3%">L</th>
+          <th width="3%">M</th>
+          <th width="3%">N</th>
+          <th width="3%">O</th>
+
+          <% if @lotofacil.qtde_dezenas.to_s > '15' %>
+            <th width="3%">P</th>
+            <% if @lotofacil.qtde_dezenas.to_s > '16' %>
+              <th width="3%">Q</th>
+              <% if @lotofacil.qtde_dezenas.to_s > '17' %>
+                <th width="3%">R</th>
+              <% end %>
+            <% end %>  
+          <% end %>
+
+          <th width="7%">Pontos 15</th>
+          <th width="7%">Pontos 14</th>
+          <th width="7%">Pontos 13</th>
+          <th width="7%">Pontos 12</th>
+          <th width="7%">Pontos 11</th>
+          <th width="10%">Total Prêmio</th>
+        </tr>
+
+       <% @jogos.each do |jogo| %>
+        <tr>
+          <td><%= jogo.a %></td>
+          <td><%= jogo.b %></td>
+          <td><%= jogo.c %></td>
+          <td><%= jogo.d %></td>
+          <td><%= jogo.e %></td>
+          <td><%= jogo.f %></td>
+          <td><%= jogo.g %></td>
+          <td><%= jogo.h %></td>
+          <td><%= jogo.i %></td>
+          <td><%= jogo.j %></td>
+          <td><%= jogo.k %></td>
+          <td><%= jogo.l %></td>
+          <td><%= jogo.m %></td>
+          <td><%= jogo.n %></td>
+          <td><%= jogo.o %></td>
+          <% if @lotofacil.qtde_dezenas.to_s > '15' %>
+            <td><%= jogo.p %></td>
+            <% if @lotofacil.qtde_dezenas.to_s > '16' %>
+              <td><%= jogo.q %></td>
+              <% if @lotofacil.qtde_dezenas.to_s > '17 '%>
+                <td><%= jogo.r %></td>
+              <% end %>
+            <% end %>  
+          <% end %>
+          <td><b><%= jogo.pontos_15 %></b></td>
+          <td><b><%= jogo.pontos_14 %></b></td>
+          <td><b><%= jogo.pontos_13 %></b></td>
+          <td><b><%= jogo.pontos_12 %></b></td>
+          <td><b><%= jogo.pontos_11 %></b></td>
+          <td><span style="color:#006400"><b><%= number_to_currency(jogo.total_premio) %></b></span></td>
+        </tr>
+       <% end %>
+       </table>
+        <div class="apple_pagination">
+            <%= will_paginate @jogos, :container => false, :next_label => 'Próximo', :previous_label => 'Anterior' %>
+        </div>
+      <% end %>
+ </div> <!-- span16-->
+</div> <!-- row-fluid -->
+   
+
+ </div> <!-- span16-->
+</div> <!-- row-fluid -->

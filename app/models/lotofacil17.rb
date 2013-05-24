@@ -3,6 +3,8 @@ class Lotofacil17 < ActiveRecord::Base
   attr_accessible :posicao, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :p, :q, :pontos_15, 
   :pontos_14, :pontos_13, :pontos_12, :pontos_11, :total_premio
 
+self.per_page = 10
+
   def self.pesquisar(obj)
   	
 	sql = ' select count(*) total from lotofacils16 '		

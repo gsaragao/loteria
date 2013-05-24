@@ -12,5 +12,7 @@ Loteria::Application.routes.draw do
 
   resources :resultado
 
+  resources :lotofacil, :only => [:index]
+
   root :to => 'home#index'
 end

@@ -117,7 +117,7 @@
               <span class="badge badge-inverse">Custom</span>&nbsp;<%= f.radio_button :tipo_concurso, "C", {:id => "tipo_c"} %>&nbsp;
               <%= select_tag 'home[operador]', options_for_select(['=','>', '<', ':', ','],@home.operador), {:class => 'input-supermini'} %>
 
-              <%= f.text_field :concursos, :class => 'input-medium', :disabled => 'disabled' %>
+              <%= f.text_field :concursos, :class => 'input-medium' %>
                 </label>
               </div>  
             </div>
@@ -217,7 +217,7 @@
                 <% if @resultado[:final] && @resultado[:final] >= 0 %>
                   <td><span style="color:#1E90FF"><b><%= number_to_currency(@resultado[:final])%></b></span></td>
                 <% else %>  
-                  <td><span style="color:red"><b><%= number_to_currency(@resultado[:final])%></b></span></td>
+                  <td><span style="color:red"><b><%= number_to_currency(@resultado[:final].to_f)%></b></span></td>
                 <% end %>  
               </tr>
 
@@ -272,19 +272,35 @@ Highcharts.setOptions({
             text: 'Análise Histórica'
         },
 
+        tooltip: {
+            formatter: function() {
+              return '<b> Concurso:</b> ' + this.x + '<br><b>Prêmio:</b> R$ ' + this.y.toString().replace(".",",") ;
+            }
+        },
+        
         xAxis: {
             name: 'Concurso',
             categories: [<%= @resultado[:categories] %>]
         },
 
+        yAxis: {
+            title: {
+                text: 'Prêmio (R$)'
+            },
+            labels: {
+                formatter: function() {
+                  return this.value.toString().replace(".",",");
+                }
+            }
+        },
+
         series: [{
             name: 'Prêmio',
-            data: [<%= @resultado[:data_series] %>],
-            
+            data: [<%= @resultado[:data_series] %>]
         }]
     });
 <% end %>
-    
+
 $('#11pt').tooltip();
 $('#12pt').tooltip();
 $('#13pt').tooltip();

@@ -1,9 +1,43 @@
 # encoding: UTF-8
 class Lotofacil < ActiveRecord::Base
   attr_accessible :posicao, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :pontos_15, 
-  :pontos_14, :pontos_13, :pontos_12, :pontos_11, :total_premio
+  :pontos_14, :pontos_13, :pontos_12, :pontos_11, :total_premio, :qtde_dezenas, :order, :ascdes
 
-  def self.pesquisar(obj)
+  attr_accessor :qtde_dezenas, :order, :ascdes
+
+  self.per_page = 10
+
+  def pesquisar(page)
+
+  	saida = []
+  	ordenacao = ''
+
+  	if order.blank?
+  	   ordenacao = 'id asc'
+  	else 
+  	   ordenacao = order + ' ' +  ascdes
+  	end   
+
+  	if qtde_dezenas == '15'
+  		saida = Lotofacil.paginate(:page => page).order(ordenacao)
+	end
+
+	if qtde_dezenas == '16'
+    	saida = Lotofacil16.paginate(:page => page).order(ordenacao)
+	end
+
+	if qtde_dezenas == '17'
+    	saida = Lotofacil17.paginate(:page => page).order(ordenacao)
+	end
+
+	if qtde_dezenas == '18'
+    	saida = Lotofacil18.paginate(:page => page).order(ordenacao)
+	end	
+
+	saida
+  end
+
+  def self.analisar(obj)
   	
 	sql = ' select count(*) total from lotofacils '		
 	sql += ' where a in (' + obj.a.join(",") + ')'

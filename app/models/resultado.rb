@@ -241,7 +241,7 @@ class Resultado < ActiveRecord::Base
 			  end
 
 			  resultado[:categories] += result.concurso.to_s;
-			  resultado[:data_series] += total_por_concurso.to_s;
+			  resultado[:data_series] += total_por_concurso.to_f.to_s;
 			}	
 		
 			if (jogo.size == 15)
