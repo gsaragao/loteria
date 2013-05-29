@@ -8,10 +8,13 @@ class LotofacilController < ApplicationController
   def index
   	@lotofacil = Lotofacil.new(params[:lotofacil])
   	@lotofacil.qtde_dezenas = 15 if @lotofacil.qtde_dezenas.blank?
-	@jogos = []
+    @lotofacil.ascdes = 'DESC' if @lotofacil.ascdes.blank?
+	  @jogos = []
+    
     if params[:commit] == 'Pesquisar'	
     	@jogos = @lotofacil.pesquisar(params[:page])
     end	
+    
     respond_with @jogos
   end
 

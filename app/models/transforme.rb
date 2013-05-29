@@ -1,10 +1,25 @@
 # encoding: UTF-8
+require 'spreadsheet'
 class Transforme
 
 # Rotina para transformar o universo de jogos
 	def self.transformar(home)
 		
 		retorno = []
+
+		if home.exportar == "1"
+			begin
+				File.delete("app/models/planilha/#{home.nome_arquivo}.xls")
+			rescue Errno::ENOENT => e
+				puts "-----------------------------------------------------------"
+				puts "Error: #{e.message}"
+				puts "-----------------------------------------------------------"
+			end	
+			
+			@planilha = Spreadsheet::Workbook.new
+			@sheet = @planilha.create_worksheet :name => 'Jogos'
+
+		end	
 
 		universo_cartao = []
   	
@@ -56,12 +71,11 @@ class Transforme
 										     	            #{universo_cartao[e]} - 
 										     	            #{universo_cartao[f]} - 
 										     	            #{universo_cartao[g]} - 
-										     	            #{universo_cartao[h]} -
-										     	            #{universo_cartao[i]} -
-										     	            #{universo_cartao[j]} -
-										     	            #{universo_cartao[k]} -
-										     	            #{universo_cartao[l]}"
-
+										     	            #{universo_cartao[h]} - 
+										     	            #{universo_cartao[i]} - 
+										     	            #{universo_cartao[j]} - 
+										     	            #{universo_cartao[k]} - 
+										     	            #{universo_cartao[l]}".gsub(/\s+/, " ").strip
 							   	 			 end #for l	
 							   	 			else	
 							   	 			 retorno << "#{universo_cartao[a]} - 
@@ -71,10 +85,10 @@ class Transforme
 										     	            #{universo_cartao[e]} - 
 										     	            #{universo_cartao[f]} - 
 										     	            #{universo_cartao[g]} - 
-										     	            #{universo_cartao[h]} -
-										     	            #{universo_cartao[i]} -
-										     	            #{universo_cartao[j]} -
-										     	            #{universo_cartao[k]}"
+										     	            #{universo_cartao[h]} - 
+										     	            #{universo_cartao[i]} - 
+										     	            #{universo_cartao[j]} - 
+										     	            #{universo_cartao[k]}".gsub(/\s+/, " ").strip
 										    end #if 11      
 							   	 		 end #for k	
 							   	 		else	
@@ -85,9 +99,9 @@ class Transforme
 						     	            #{universo_cartao[e]} - 
 						     	            #{universo_cartao[f]} - 
 						     	            #{universo_cartao[g]} - 
-						     	            #{universo_cartao[h]} -
-						     	            #{universo_cartao[i]} -
-						     	            #{universo_cartao[j]}"
+						     	            #{universo_cartao[h]} - 
+						     	            #{universo_cartao[i]} - 
+						     	            #{universo_cartao[j]}".gsub(/\s+/, " ").strip
 						     	    end #if 10  
 							   	 	 end #for j	
 							   	 	else	
@@ -98,8 +112,8 @@ class Transforme
 				     	            #{universo_cartao[e]} - 
 				     	            #{universo_cartao[f]} - 
 				     	            #{universo_cartao[g]} - 
-				     	            #{universo_cartao[h]} -
-				     	            #{universo_cartao[i]}"
+				     	            #{universo_cartao[h]} - 
+				     	            #{universo_cartao[i]}".gsub(/\s+/, " ").strip
 						     	  end #if 9      
 						   	 	 end #for i	
 					   	 		else
@@ -110,7 +124,7 @@ class Transforme
 						     	            #{universo_cartao[e]} - 
 						     	            #{universo_cartao[f]} - 
 						     	            #{universo_cartao[g]} - 
-						     	            #{universo_cartao[h]}"
+						     	            #{universo_cartao[h]}".gsub(/\s+/, " ").strip
 					     	  end #if 8        
 					     	 end #for h          
 					     	else          		
@@ -120,7 +134,7 @@ class Transforme
 					     	              #{universo_cartao[d]} - 
 					     	              #{universo_cartao[e]} - 
 					     	              #{universo_cartao[f]} - 
-					     	              #{universo_cartao[g]}"	
+					     	              #{universo_cartao[g]}".gsub(/\s+/, " ").strip
 		 					  end #if 7
 		 					 end #for g	
 		 					else
@@ -129,31 +143,47 @@ class Transforme
 	    				 						 #{universo_cartao[c]} - 
 	    				 						 #{universo_cartao[d]} - 
 	    				 						 #{universo_cartao[e]} - 
-	    				 						 #{universo_cartao[f]}"	
+	    				 						 #{universo_cartao[f]}".gsub(/\s+/, " ").strip	
 		 					end #if 6
  						 end #for f	
  						else
 	    			 retorno << "#{universo_cartao[a]} - 
-	    								   #{universo_cartao[b]} - 
-	    								   #{universo_cartao[c]} - 
-	    								   #{universo_cartao[d]} - 
-	    								   #{universo_cartao[e]}"	
+	    			 					   #{universo_cartao[b]} - 
+	    			 					   #{universo_cartao[c]} - 
+	    			 					   #{universo_cartao[d]} - 
+	    			 					   #{universo_cartao[e]}".gsub(/\s+/, " ").strip	
  						end #if 5	
 		    	 end #for e
 		    	else
-	    		 retorno << "#{universo_cartao[a]} - #{universo_cartao[b]} - #{universo_cartao[c]} - #{universo_cartao[d]}"  	
+	    		 retorno << "#{universo_cartao[a]} - #{universo_cartao[b]} - #{universo_cartao[c]} - #{universo_cartao[d]}".gsub(/\s+/, " ").strip  	
 		    	end #if 4 	
     	   end #for d
 	    	else
-   			 retorno << "#{universo_cartao[a]} - #{universo_cartao[b]} - #{universo_cartao[c]}" 
+   			 retorno << "#{universo_cartao[a]} - #{universo_cartao[b]} - #{universo_cartao[c]}".gsub(/\s+/, " ").strip 
 		    end #if 3   
    	   end #for c
 	    else
-	     retorno << "#{universo_cartao[a]} - #{universo_cartao[b]}" 
+	     retorno << "#{universo_cartao[a]} - #{universo_cartao[b]}".gsub(/\s+/, " ").strip 
 	    end #if 2  
    	 end #for b
    	end #for a
-   	retorno
+
+  	convert_export(retorno, home) if home.exportar == "1"
+	 	
+	retorno
+	end
+
+	def self.convert_export(arr, home)
+		
+		for i in 0..arr.size - 1
+			 row = arr[i].split(" - ")
+  	   @sheet.insert_row(i, row)
+  	end
+
+  	@planilha.write "app/models/planilha/#{home.nome_arquivo}.xls"
+
 	end
 
 end	
+
+

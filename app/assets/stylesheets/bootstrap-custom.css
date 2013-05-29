@@ -113,6 +113,10 @@ input[type="checkbox"] {
   background-color: #ffffff; 
 }
 
+.input-small_medium {
+  width: 110px;
+}
+
 .input-supermini {
   width: 45px;
 }

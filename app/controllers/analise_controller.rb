@@ -5,12 +5,15 @@ class AnaliseController < ApplicationController
   before_filter :setar_classe_menu
 
   def index
+
     @home = Home.new(params[:home])
     default_values
 
     if params[:commit] == 'Gerar'
       @jogos = Lotofacil.analisar(@home)
     end  
+
+    @retorno = Resultado.analisar
   end
 
   private

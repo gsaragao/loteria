@@ -119,9 +119,18 @@
                 </label>
               </div>  
             </div>
+            <div class="control-group">    
+               <div class="controls">
+                <label class="checkbox inline">
+                  <%= f.check_box :exportar, {:id => "chk_exp"} %>Exportar
+                </label>
+                <%= f.text_field :nome_arquivo, :class => 'input-medium', :disabled => 'disabled' %>
+              </div>  
+            </div>
              <div class="row">
               <div class="span7">
-                <%= f.submit 'Transformar' , :class => "btn btn-primary" %>
+                <%= f.submit 'Transformar' , :class => "btn btn-primary" %>&nbsp;&nbsp;<% if @resultado_total.size > 0 %>
+                <%= @resultado_total.size %> jogos<% end %>
               </div> <!-- span12-->
             </div> <!-- row -->
 
@@ -153,4 +162,19 @@
  </div> <!-- span18-->
 </div> <!-- row-fluid -->
 
+<script>
 
+if ($('#chk_exp').is('input:checked')) {
+  $('#home_nome_arquivo').removeAttr('disabled');
+}
+
+$('#chk_exp').click(function() { 
+  if ($('#chk_exp').is('input:checked')) {
+    $('#home_nome_arquivo').removeAttr('disabled');
+  } else {
+    $('#home_nome_arquivo').attr('disabled','disabled');
+  }
+});
+
+
+</script>

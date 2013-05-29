@@ -13,6 +13,7 @@ gem "will_paginate", "~> 3.0.3"
 gem 'devise'
 gem 'brdinheiro'
 gem "roo", "~> 1.11.2"
+gem "spreadsheet", "~> 0.8.5"
 #gem 'iconv'
 gem 'puma'
 

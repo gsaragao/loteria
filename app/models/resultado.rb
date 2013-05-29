@@ -22,6 +22,73 @@ class Resultado < ActiveRecord::Base
   	 find_by_sql("select round(sum(rateio_14) / count(*),2) rateio_14 from resultados")
   end
 
+  def self.analisar
+
+		retorno = []
+  	
+  	sql = "select x.a as num, concat(concat(x.a, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select a, count(*) total, (select count(*) from resultados) geral from resultados group by a) x "
+  	retorno[0] = find_by_sql(sql)
+
+  	sql = "select x.b as num, concat(concat(x.b, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select b, count(*) total, (select count(*) from resultados) geral from resultados group by b) x "
+  	retorno[1] = find_by_sql(sql)
+
+		sql = "select x.c as num, concat(concat(x.c, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select c, count(*) total, (select count(*) from resultados) geral from resultados group by c) x "
+  	retorno[2] = find_by_sql(sql)
+
+		sql = "select x.d as num, concat(concat(x.d, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select d, count(*) total, (select count(*) from resultados) geral from resultados group by d) x "
+  	retorno[3] = find_by_sql(sql)
+
+		sql = "select x.e as num, concat(concat(x.e, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select e, count(*) total, (select count(*) from resultados) geral from resultados group by e) x "
+  	retorno[4] = find_by_sql(sql)
+
+		sql = "select x.f as num, concat(concat(x.f, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select f, count(*) total, (select count(*) from resultados) geral from resultados group by f) x "
+  	retorno[5] = find_by_sql(sql)
+
+		sql = "select x.g as num, concat(concat(x.g, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select g, count(*) total, (select count(*) from resultados) geral from resultados group by g) x "
+  	retorno[6] = find_by_sql(sql)
+
+		sql = "select x.h as num, concat(concat(x.h, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select h, count(*) total, (select count(*) from resultados) geral from resultados group by h) x "
+  	retorno[7] = find_by_sql(sql)
+
+		sql = "select x.i as num, concat(concat(x.i, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select i, count(*) total, (select count(*) from resultados) geral from resultados group by i) x "
+  	retorno[8] = find_by_sql(sql)
+
+		sql = "select x.j as num, concat(concat(x.j, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select j, count(*) total, (select count(*) from resultados) geral from resultados group by j) x "
+  	retorno[9] = find_by_sql(sql)
+
+		sql = "select x.k as num, concat(concat(x.k, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select k, count(*) total, (select count(*) from resultados) geral from resultados group by k) x "
+  	retorno[10] = find_by_sql(sql)
+
+		sql = "select x.l as num, concat(concat(x.l, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select l, count(*) total, (select count(*) from resultados) geral from resultados group by l) x "
+  	retorno[11] = find_by_sql(sql)
+
+		sql = "select x.m as num, concat(concat(x.m, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select m, count(*) total, (select count(*) from resultados) geral from resultados group by m) x "
+  	retorno[12] = find_by_sql(sql)
+
+		sql = "select x.n as num, concat(concat(x.n, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select n, count(*) total, (select count(*) from resultados) geral from resultados group by n) x "
+  	retorno[13] = find_by_sql(sql)
+
+		sql = "select x.o as num, concat(concat(x.o, ' - ', round((x.total / x.geral) * 100,1)),' ','%') as perc " 
+		sql += "from (select o, count(*) total, (select count(*) from resultados) geral from resultados group by o) x "
+  	retorno[14] = find_by_sql(sql)
+
+  	retorno
+  end
+
   # Rotina que verifica os pontos ganhos na aposta
   def self.verificar(home)
 

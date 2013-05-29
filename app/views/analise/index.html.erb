@@ -1,6 +1,7 @@
 
 <div class="row">
   <div class="span18">
+
         <%= form_for(@home, :html => { :method => :post, :class => 'form-horizontal' }, :url => analise_index_path) do |f| %>
 
         <div class="control-group">    
@@ -8,67 +9,67 @@
            <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-info">01</span>&nbsp;
-                  <%= select_tag 'home[a]' , options_for_select((1..6).to_a,@home.a), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[a]', options_from_collection_for_select(@retorno[0], 'num', 'perc', @home.a), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">02</span>&nbsp;
-                <%= select_tag 'home[b]', options_for_select((2..9).to_a,@home.b), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[b]', options_from_collection_for_select(@retorno[1], 'num', 'perc', @home.b), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">03</span>&nbsp;
-                <%= select_tag 'home[c]', options_for_select((3..11).to_a,@home.c), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[c]', options_from_collection_for_select(@retorno[2], 'num', 'perc', @home.c), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">04</span>&nbsp;
-                <%= select_tag 'home[d]', options_for_select((4..12).to_a,@home.d), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[d]', options_from_collection_for_select(@retorno[3], 'num', 'perc', @home.d), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">05</span>&nbsp;
-                <%= select_tag 'home[e]', options_for_select((5..14).to_a,@home.e), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[e]', options_from_collection_for_select(@retorno[4], 'num', 'perc', @home.e), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               </div>
              <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-info">06</span>&nbsp;
-                <%= select_tag 'home[f]', options_for_select((6..15).to_a,@home.f), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[f]', options_from_collection_for_select(@retorno[5], 'num', 'perc', @home.f), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">07</span>&nbsp;
-                <%= select_tag 'home[g]', options_for_select((7..16).to_a,@home.g), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[g]', options_from_collection_for_select(@retorno[6], 'num', 'perc', @home.g), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">08</span>&nbsp;
-                <%= select_tag 'home[h]', options_for_select((8..17).to_a,@home.h), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[h]', options_from_collection_for_select(@retorno[7], 'num', 'perc', @home.h), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">09</span>&nbsp;
-                <%= select_tag 'home[i]', options_for_select((9..19).to_a,@home.i), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[i]', options_from_collection_for_select(@retorno[8], 'num', 'perc', @home.i), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">10</span>&nbsp;
-                <%= select_tag 'home[j]', options_for_select((10..20).to_a,@home.j), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[j]', options_from_collection_for_select((@retorno[9], 'num', 'perc', @home.j), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
             </div>
              <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-info">11</span>&nbsp;
-                <%= select_tag 'home[k]', options_for_select((11..21).to_a,@home.k), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[k]', options_from_collection_for_select((@retorno[10], 'num', 'perc', @home.k), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">12</span>&nbsp;
-                <%= select_tag 'home[l]', options_for_select((12..22).to_a,@home.l), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[l]', options_from_collection_for_select((@retorno[11], 'num', 'perc', @home.l), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">13</span>&nbsp;
-                <%= select_tag 'home[m]', options_for_select((13..23).to_a,@home.m), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[m]', options_from_collection_for_select((@retorno[12], 'num', 'perc', @home.m), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">14</span>&nbsp;
-                <%= select_tag 'home[n]', options_for_select((14..24).to_a,@home.n), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[n]', options_from_collection_for_select((@retorno[13], 'num', 'perc', @home.n), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">15</span>&nbsp;
-                <%= select_tag 'home[o]', options_for_select((15..25).to_a,@home.o), {:multiple => true, :class => 'input-supermini', :size => 8} %>
+                <%= select_tag 'home[o]', options_from_collection_for_select((@retorno[14], 'num', 'perc', @home.o), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
 
             </div>
@@ -101,7 +102,9 @@
         </div> <!-- row -->
 
         <% end %>
- </div> <!-- span18-->
+ 
+  </div> <!-- span18-->
+
 </div> <!-- row-fluid -->
 
 

@@ -8,8 +8,14 @@ class TransformeController < ApplicationController
   def index
       
     @home = Home.new(params[:home])
-    @resultado_total = Transforme.transformar(@home)
-    @resultado = @resultado_total.paginate(page: params[:page], per_page: 10)
+    @resultado = []
+    @resultado_total = []
+
+    if params[:commit] == 'Transformar'
+      @resultado_total = Transforme.transformar(@home)
+      @resultado = @resultado_total.paginate(page: params[:page], per_page: 10)
+    end
+    
   end
 
   private
