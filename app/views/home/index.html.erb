@@ -1,7 +1,7 @@
 
 <%= form_for(@home, :html => { :method => :post, :class => 'form-horizontal' }, :url => home_index_path) do |f| %>
 <div class="row">
-  <div class="span18">
+  <div class="span17">
     <div class="row">
       <div class="span7"> 
 
@@ -139,7 +139,7 @@
         </div>
         <%= f.submit 'Verificar' , :class => "btn btn-primary" %>
      </div> <!-- span7-->
-     <div class="span7">
+     <div class="span6">
 
       <div class="control-group">    
         <br>
@@ -274,7 +274,7 @@ Highcharts.setOptions({
 
         tooltip: {
             formatter: function() {
-              return '<b> Concurso:</b> ' + this.x + '<br><b>Prêmio:</b> R$ ' + this.y.toString().replace(".",",") ;
+              return '<b> Concurso:</b> ' + this.x + '<br><b>Prêmio:</b> R$ ' + moeda.formatar(this.y); //.toString().replace(".",",") ;
             }
         },
         
@@ -289,7 +289,7 @@ Highcharts.setOptions({
             },
             labels: {
                 formatter: function() {
-                  return this.value.toString().replace(".",",");
+                  return moeda.formatar(this.value); //.toString().replace(".",",");
                 }
             }
         },
@@ -377,5 +377,9 @@ $('#tipo_m').click(function() {
 $('#tipo_a').click(function() { 
   $('#home_nome_arquivo').removeAttr('disabled');
 });
+
+
+
+
 
 </script>

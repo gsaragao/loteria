@@ -1,6 +1,6 @@
 
 <div class="row">
-  <div class="span18">
+  <div class="span17">
 
         <%= form_for(@home, :html => { :method => :post, :class => 'form-horizontal' }, :url => analise_index_path) do |f| %>
 
@@ -47,29 +47,29 @@
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">10</span>&nbsp;
-                <%= select_tag 'home[j]', options_from_collection_for_select((@retorno[9], 'num', 'perc', @home.j), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
+                <%= select_tag 'home[j]', options_from_collection_for_select(@retorno[9], 'num', 'perc', @home.j), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
             </div>
              <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-info">11</span>&nbsp;
-                <%= select_tag 'home[k]', options_from_collection_for_select((@retorno[10], 'num', 'perc', @home.k), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
+                <%= select_tag 'home[k]', options_from_collection_for_select(@retorno[10], 'num', 'perc', @home.k), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">12</span>&nbsp;
-                <%= select_tag 'home[l]', options_from_collection_for_select((@retorno[11], 'num', 'perc', @home.l), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
+                <%= select_tag 'home[l]', options_from_collection_for_select(@retorno[11], 'num', 'perc', @home.l), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">13</span>&nbsp;
-                <%= select_tag 'home[m]', options_from_collection_for_select((@retorno[12], 'num', 'perc', @home.m), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
+                <%= select_tag 'home[m]', options_from_collection_for_select(@retorno[12], 'num', 'perc', @home.m), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">14</span>&nbsp;
-                <%= select_tag 'home[n]', options_from_collection_for_select((@retorno[13], 'num', 'perc', @home.n), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
+                <%= select_tag 'home[n]', options_from_collection_for_select(@retorno[13], 'num', 'perc', @home.n), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
               <label class="checkbox inline">
                 <span class="badge badge-info">15</span>&nbsp;
-                <%= select_tag 'home[o]', options_from_collection_for_select((@retorno[14], 'num', 'perc', @home.o), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
+                <%= select_tag 'home[o]', options_from_collection_for_select(@retorno[14], 'num', 'perc', @home.o), {:multiple => true, :class => 'input-small_medium', :size => 10} %>
               </label>
 
             </div>

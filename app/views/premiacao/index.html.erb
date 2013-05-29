@@ -3,9 +3,9 @@
 <% @premio14 = Resultado.media_14[0].rateio_14 %> 
 
 <div class="row">
-  <div class="span18">
+  <div class="span17">
     <div class="row">
-      <div class="span4"> 
+      <div style="width: 260px;float: left; margin-left: 30px"> 
         <table class="table table-striped">
           <tr>
             <th>Custo</th>
@@ -13,27 +13,27 @@
           </tr>  
           <tr>
             <th>Qtde Jogada</th>
-            <th>Valor</th>
+            <th style="text-align: right;">Valor</th>
           </tr>
           <tr>
             <td style="color:#1E90FF">15</td>
-            <td><span style="color:#006400"><b><%= number_to_currency(1.25) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(1.25) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">16</td>
-            <td><span style="color:#006400"><b><%= number_to_currency(16) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(16) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">17</td>
-            <td><span style="color:#006400"><b><%= number_to_currency(170) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(170) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">18</td>
-            <td><span style="color:#006400"><b><%= number_to_currency(1020) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(1020) %></b></span></td>
           </tr>
        </table>
       </div> <!-- span7-->
-      <div class="span4"> 
+      <div  style="width: 260px;float: left; margin-left: 30px"> 
         <table class="table table-striped">
           <tr>
             <th>Prêmio</th>
@@ -41,35 +41,32 @@
           </tr>  
           <tr>
             <th>Acertos</th>
-            <th>Prêmio</th>
+            <th style="text-align: right;">Prêmio</th>
           </tr>
           <tr>
             <td style="color:#1E90FF">15</td>
-            <td><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency(@premio15) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency(@premio15) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">14</td>
-            <td><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency(@premio14) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency(@premio14) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">13</td>
-            <td><span style="color:#006400"><b><%= number_to_currency(Resultado::PREMIO13) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(Resultado::PREMIO13) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">12</td>
-            <td><span style="color:#006400"><b><%= number_to_currency(Resultado::PREMIO12) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(Resultado::PREMIO12) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">11</td>
-            <td><span style="color:#006400"><b><%= number_to_currency(Resultado::PREMIO11) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(Resultado::PREMIO11) %></b></span></td>
           </tr>
        </table>
       </div> <!-- span7-->
-    </div>  
-<br>
 
-    <div class="row">
-      <div class="span4"> 
+      <div  style="width: 310px;float: left; margin-left: 30px"> 
         <table class="table table-striped">
           <tr>
             <th>Acertando 11 pontos</th>
@@ -79,31 +76,32 @@
           <tr>
             <th>Qtde Jogada</th>
             <th>11</th>
-            <th>Prêmio</th>
+            <th style="text-align: right;">Prêmio</th>
           </tr>
           <tr>
             <td style="color:#1E90FF">15</td>
             <td style="color:#666">1</td>
-            <td><span style="color:#006400"><b><%= number_to_currency(Resultado::PREMIO11) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(Resultado::PREMIO11) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">16</td>
             <td style="color:#666">5</td>
-            <td><span style="color:#006400"><b><%= number_to_currency(5 * Resultado::PREMIO11) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(5 * Resultado::PREMIO11) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">17</td>
             <td style="color:#666">15</td>
-            <td><span style="color:#006400"><b><%= number_to_currency(15 * Resultado::PREMIO11) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(15 * Resultado::PREMIO11) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">18</td>
             <td style="color:#666">35</td>
-            <td><span style="color:#006400"><b><%= number_to_currency(35 * Resultado::PREMIO11) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(35 * Resultado::PREMIO11) %></b></span></td>
           </tr>
        </table>
       </div> <!-- span7-->
-      <div class="span4"> 
+
+      <div style="width: 350px;float: left; margin-left: 30px"> 
         <table class="table table-striped">
           <tr>
             <th>Acertando 12 pontos</th>
@@ -115,40 +113,43 @@
             <th>Qtde Jogada</th>
             <th>12</th>
             <th>11</th>
-            <th>Prêmio</th>
+            <th style="text-align: right;">Prêmio</th>
           </tr>
           <tr>
             <td style="color:#1E90FF">15</td>
             <td style="color:#666">1</td>
             <td style="color:#666">0</td>
-            <td><span style="color:#006400"><b><%= number_to_currency(Resultado::PREMIO12) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(Resultado::PREMIO12) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">16</td>
             <td style="color:#666">4</td>
             <td style="color:#666">12</td>
-            <td><span style="color:#006400"><b><%= number_to_currency((4 * Resultado::PREMIO12) + (12 * Resultado::PREMIO11)) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency((4 * Resultado::PREMIO12) + (12 * Resultado::PREMIO11)) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">17</td>
             <td style="color:#666">10</td>
             <td style="color:#666">60</td>
-            <td><span style="color:#006400"><b><%= number_to_currency((10 * Resultado::PREMIO12) + (60 * Resultado::PREMIO11)) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency((10 * Resultado::PREMIO12) + (60 * Resultado::PREMIO11)) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">18</td>
             <td style="color:#666">20</td>
             <td style="color:#666">180</td>
-            <td><span style="color:#006400"><b><%= number_to_currency((20 * Resultado::PREMIO12) + (180 * Resultado::PREMIO11)) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency((20 * Resultado::PREMIO12) + (180 * Resultado::PREMIO11)) %></b></span></td>
           </tr>
        </table>
       </div> <!-- span7-->
-      <div class="span5"> 
+
+    </div>  
+<br>
+
+    <div class="row">
+      <div style="width: 380px;float: left; margin-left: 30px"> 
         <table class="table table-striped">
           <tr>
-            <th>Acertando 13 pontos</th>
-            <th></th>
-            <th></th>
+            <th colspan="3">Acertando 13 pontos</th>
             <th></th>
             <th></th>
           </tr>  
@@ -157,48 +158,43 @@
             <th>13</th>
             <th>12</th>
             <th>11</th>
-            <th>Prêmio</th>
+            <th style="text-align: right;">Prêmio</th>
           </tr>
           <tr>
             <td style="color:#1E90FF">15</td>
             <td style="color:#666">1</td>
             <td style="color:#666">0</td>
             <td style="color:#666">0</td>
-            <td><span style="color:#006400"><b><%= number_to_currency(Resultado::PREMIO13) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(Resultado::PREMIO13) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">16</td>
             <td style="color:#666">3</td>
             <td style="color:#666">13</td>
             <td style="color:#666">0</td>
-            <td><span style="color:#006400"><b><%= number_to_currency((3 * Resultado::PREMIO13) + (13 * Resultado::PREMIO12)) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency((3 * Resultado::PREMIO13) + (13 * Resultado::PREMIO12)) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">17</td>
             <td style="color:#666">6</td>
             <td style="color:#666">52</td>
             <td style="color:#666">78</td>
-            <td><span style="color:#006400"><b><%= number_to_currency((6 * Resultado::PREMIO13) + (52 * Resultado::PREMIO12) + (78 * Resultado::PREMIO11)) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency((6 * Resultado::PREMIO13) + (52 * Resultado::PREMIO12) + (78 * Resultado::PREMIO11)) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">18</td>
             <td style="color:#666">10</td>
             <td style="color:#666">130</td>
             <td style="color:#666">390</td>
-            <td><span style="color:#006400"><b><%= number_to_currency((10 * Resultado::PREMIO13) + (130 * Resultado::PREMIO12) + (390 * Resultado::PREMIO11)) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency((10 * Resultado::PREMIO13) + (130 * Resultado::PREMIO12) + (390 * Resultado::PREMIO11)) %></b></span></td>
           </tr>
        </table>
       </div>
-    </div> <!-- row-fluid -->
-    <div class="row">
-      <div class="span6"> 
+
+      <div style="width: 420px;float: left; margin-left: 30px"> 
         <table class="table table-striped">
           <tr>
-            <th>Acertando 14 pontos</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th colspan="5">Acertando 14 pontos</th>
             <th></th>
           </tr>  
           <tr>
@@ -207,7 +203,7 @@
             <th>13</th>
             <th>12</th>
             <th>11</th>
-            <th>Prêmio</th>
+            <th style="text-align: right;">Prêmio</th>
           </tr>
           <tr>
             <td style="color:#1E90FF">15</td>
@@ -215,7 +211,7 @@
             <td style="color:#666">0</td>
             <td style="color:#666">0</td>
             <td style="color:#666">0</td>
-            <td><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency(@premio14) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency(@premio14) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">16</td>
@@ -223,7 +219,7 @@
             <td style="color:#666">14</td>
             <td style="color:#666">0</td>
             <td style="color:#666">0</td>
-            <td><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency((2 * @premio14) +(14 * Resultado::PREMIO13)) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency((2 * @premio14) +(14 * Resultado::PREMIO13)) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">17</td>
@@ -231,7 +227,7 @@
             <td style="color:#666">42</td>
             <td style="color:#666">91</td>
             <td style="color:#666">0</td>
-            <td><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency((3 * @premio14) +(42 * Resultado::PREMIO13) + (91 * Resultado::PREMIO12)) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency((3 * @premio14) +(42 * Resultado::PREMIO13) + (91 * Resultado::PREMIO12)) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">18</td>
@@ -239,20 +235,15 @@
             <td style="color:#666">84</td>
             <td style="color:#666">364</td>
             <td style="color:#666">364</td>
-            <td><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency((4 * @premio14) + (84 * Resultado::PREMIO13) + (364 * Resultado::PREMIO12) + (364 * Resultado::PREMIO11)) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency((4 * @premio14) + (84 * Resultado::PREMIO13) + (364 * Resultado::PREMIO12) + (364 * Resultado::PREMIO11)) %></b></span></td>
           </tr>
        </table>
-
-
       </div> <!-- span7-->
-      <div class="span6"> 
+
+       <div  style="width: 430px;float: left; margin-left: 30px"> 
         <table class="table table-striped">
           <tr>
-            <th>Acertando 15 pontos</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th colspan="5">Acertando 15 pontos</th>
             <th></th>
           </tr>  
           <tr>
@@ -261,7 +252,7 @@
             <th>14</th>
             <th>13</th>
             <th>12</th>
-            <th>Prêmio</th>
+            <th style="text-align: right;">Prêmio</th>
           </tr>
           <tr>
             <td style="color:#1E90FF">15</td>
@@ -269,7 +260,7 @@
             <td style="color:#666">0</td>
             <td style="color:#666">0</td>
             <td style="color:#666">0</td>
-            <td><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency(@premio15) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency(@premio15) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">16</td>
@@ -277,7 +268,7 @@
             <td style="color:#666">15</td>
             <td style="color:#666">0</td>
             <td style="color:#666">0</td>
-            <td><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency((1 * @premio15) +(15 * @premio14)) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency((1 * @premio15) +(15 * @premio14)) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">17</td>
@@ -285,7 +276,7 @@
             <td style="color:#666">30</td>
             <td style="color:#666">105</td>
             <td style="color:#666">0</td>
-            <td><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency((1 * @premio15) +(30 * @premio14) + (105 * Resultado::PREMIO13)) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency((1 * @premio15) +(30 * @premio14) + (105 * Resultado::PREMIO13)) %></b></span></td>
           </tr>
           <tr>
             <td style="color:#1E90FF">18</td>
@@ -293,10 +284,12 @@
             <td style="color:#666">45</td>
             <td style="color:#666">315</td>
             <td style="color:#666">455</td>
-            <td><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency((1 * @premio15) +(45 * @premio14) + (315 * Resultado::PREMIO13) + (455 * Resultado::PREMIO12)) %></b></span></td>
+            <td style="text-align: right;"><span style="color:#006400"><b>+-&nbsp;<%= number_to_currency((1 * @premio15) +(45 * @premio14) + (315 * Resultado::PREMIO13) + (455 * Resultado::PREMIO12)) %></b></span></td>
           </tr>
        </table>
       </div> <!-- span7-->
+
+
     </div> <!-- row-fluid -->
 
 
