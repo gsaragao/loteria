@@ -1,0 +1,81 @@
+<br>
+<div class="row">
+  <div class="span16">
+
+  <div class="control-group">    
+    <div class="controls">
+
+      <% if @resultados.size > 0  %>
+       <table>
+        <tr>
+          <th width="7%" style="padding: 4px"><%= t('resultado.concurso')%></th>
+          <th width="3%" style="padding: 4px">1</th>
+          <th width="3%" style="padding: 4px">2</th>
+          <th width="3%" style="padding: 4px">3</th>
+          <th width="3%" style="padding: 4px">4</th>
+          <th width="3%" style="padding: 4px">5</th>
+          <th width="3%" style="padding: 4px">6</th>
+          <th width="3%" style="padding: 4px">7</th>
+          <th width="3%" style="padding: 4px">8</th>
+          <th width="3%" style="padding: 4px">9</th>
+          <th width="3%" style="padding: 4px">10</th>
+          <th width="3%" style="padding: 4px">11</th>
+          <th width="3%" style="padding: 4px">12</th>
+          <th width="3%" style="padding: 4px">13</th>
+          <th width="3%" style="padding: 4px">14</th>
+          <th width="3%" style="padding: 4px">15</th>
+          <th width="3%" style="padding: 4px">16</th>
+          <th width="3%" style="padding: 4px">17</th>
+          <th width="3%" style="padding: 4px">18</th>
+          <th width="3%" style="padding: 4px">19</th>
+          <th width="3%" style="padding: 4px">20</th>
+          <th width="3%" style="padding: 4px">21</th>
+          <th width="3%" style="padding: 4px">22</th>
+          <th width="3%" style="padding: 4px">23</th>
+          <th width="3%" style="padding: 4px">24</th>
+          <th width="3%" style="padding: 4px">25</th>
+        </tr>
+
+       <% @resultados.each do |resultado| %>
+        <tr>
+          <td  style="color:#1E90FF;text-align: center"><%= resultado[0] %></td>
+          <% if resultado[1].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[1] %></td>
+          <% if resultado[2].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[2] %></td>
+          <% if resultado[3].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[3] %></td>
+          <% if resultado[4].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[4] %></td>
+          <% if resultado[5].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[5] %></td>
+          <% if resultado[6].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[6] %></td>
+          <% if resultado[7].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[7] %></td>
+          <% if resultado[8].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[8] %></td>
+          <% if resultado[9].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[9] %></td>
+          <% if resultado[10].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[10] %></td>
+          <% if resultado[11].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[11] %></td>
+          <% if resultado[12].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[12] %></td>
+          <% if resultado[13].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[13] %></td>
+          <% if resultado[14].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[14] %></td>
+          <% if resultado[15].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[15] %></td>
+          <% if resultado[16].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[16] %></td>
+          <% if resultado[17].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[17] %></td>
+          <% if resultado[18].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[18] %></td>
+          <% if resultado[19].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[19] %></td>
+          <% if resultado[20].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[20] %></td>
+          <% if resultado[21].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[21] %></td>
+          <% if resultado[22].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[22] %></td>
+          <% if resultado[23].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[23] %></td>
+          <% if resultado[24].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[24] %></td>
+          <% if resultado[25].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 6px;text-align: center"><% end %><%= resultado[25] %></td>
+        </tr>
+       <% end %>
+       </table>
+      <% end %>
+
+    </div>
+  </div>  
+
+ </div> <!-- span16-->
+</div> <!-- row-fluid -->
+
+<br />
+
+<a class="btn" href="<%= resultado_index_path %>"><%= t('botao.voltar')%></a>  
+

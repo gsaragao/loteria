@@ -22,6 +22,26 @@ class Resultado < ActiveRecord::Base
   	 find_by_sql("select round(sum(rateio_14) / count(*),2) rateio_14 from resultados")
   end
 
+  def self.acompanhamento
+  	 retorno = [] 
+
+  	 resultados = order("id desc").limit(20)	
+
+  	 resultados.each {|result| 
+
+  	 		jogo = []
+  	 		jogo[0] = result.concurso
+
+  	 		for i in 3..17
+  	 			 jogo[result.attributes.to_a[i].map.to_a[1]] = result.attributes.to_a[i].map.to_a[1]
+  	 		end
+
+  	 		retorno << jogo	
+  	 }
+
+  	 retorno
+  end
+
   def self.analisar
 
 		retorno = []

@@ -10,8 +10,9 @@ Loteria::Application.routes.draw do
 
   resources :premiacao, :only => [:index]
 
-  resources :resultado
-
+  resources :resultado, :except => [:show]
+  match "resultado/acompanhamento" => "resultado#acompanhamento"
+  
   resources :lotofacil, :only => [:index]
 
   root :to => 'home#index'

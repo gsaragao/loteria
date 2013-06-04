@@ -12,8 +12,10 @@ class ResultadoController < ApplicationController
     respond_with @resultados
   end
 
-  def show
-    respond_with @resultado
+  def acompanhamento
+    @resultados = Resultado.acompanhamento
+    @resultados = @resultados.sort_by { |result| result[0] }
+    respond_with @resultados
   end
 
   def new
