@@ -22,7 +22,75 @@ class Resultado < ActiveRecord::Base
   	 find_by_sql("select round(sum(rateio_14) / count(*),2) rateio_14 from resultados")
   end
 
+  def linha
+  	  	
+  		linha1 = 0
+  		linha2 = 0
+  		linha3 = 0
+  		linha4 = 0
+  		linha5 = 0
+  	  	
+  		for i in 3..17
+  	 		 if [1,2,3,4,5].include?(attributes.to_a[i].map.to_a[1])
+  	 		 		linha1 += 1
+  	 		 end
+
+  	 		 if [6,7,8,9,10].include?(attributes.to_a[i].map.to_a[1])
+  	 		 		linha2 += 1
+  	 		 end
+
+  	 		 if [11,12,13,14,15].include?(attributes.to_a[i].map.to_a[1])
+  	 		 		linha3 += 1
+  	 		 end
+
+  	 		 if [16,17,18,19,20].include?(attributes.to_a[i].map.to_a[1])
+  	 		 		linha4 += 1
+  	 		 end
+
+  	 		 if [21,22,23,24,25].include?(attributes.to_a[i].map.to_a[1])
+  	 		 		linha5 += 1
+  	 		 end
+  	 	end
+
+  	 	linha1.to_s + '-' + linha2.to_s + '-' + linha3.to_s + '-' + linha4.to_s + '-' + linha5.to_s
+  end
+
+  def coluna
+  	  	
+  		coluna1 = 0
+  		coluna2 = 0
+  		coluna3 = 0
+  		coluna4 = 0
+  		coluna5 = 0
+  	  	
+  		for i in 3..17
+  	 		 if [1,6,11,16,21].include?(attributes.to_a[i].map.to_a[1])
+  	 		 		coluna1 += 1
+  	 		 end
+
+  	 		 if [2,7,12,17,22].include?(attributes.to_a[i].map.to_a[1])
+  	 		 		coluna2 += 1
+  	 		 end
+
+  	 		 if [3,8,13,18,23].include?(attributes.to_a[i].map.to_a[1])
+  	 		 		coluna3 += 1
+  	 		 end
+
+  	 		 if [4,9,14,19,24].include?(attributes.to_a[i].map.to_a[1])
+  	 		 		coluna4 += 1
+  	 		 end
+
+  	 		 if [5,10,15,20,25].include?(attributes.to_a[i].map.to_a[1])
+  	 		 		coluna5 += 1
+  	 		 end
+  	 	end
+
+  	 	coluna1.to_s + '-' + coluna2.to_s + '-' + coluna3.to_s + '-' + coluna4.to_s + '-' + coluna5.to_s
+  end
+
+
   def self.acompanhamento
+  	
   	 retorno = [] 
 
   	 resultados = order("id desc").limit(20)	
@@ -35,6 +103,9 @@ class Resultado < ActiveRecord::Base
   	 		for i in 3..17
   	 			 jogo[result.attributes.to_a[i].map.to_a[1]] = result.attributes.to_a[i].map.to_a[1]
   	 		end
+  	 		
+  	 		jogo[26] = result.linha
+  	 		jogo[27] = result.coluna
 
   	 		retorno << jogo	
   	 }

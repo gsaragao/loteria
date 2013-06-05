@@ -19,7 +19,7 @@
        <table class="table table-striped">
         <tr>
           <th width="7%"><%= t('resultado.concurso')%></th>
-          <th width="10%"><%= t('resultado.data')%></th>
+          <th width="8%"><%= t('resultado.data')%></th>
           <th width="3%">A</th>
           <th width="3%">B</th>
           <th width="3%">C</th>
@@ -37,13 +37,15 @@
           <th width="5%">O</th>
           <th width="12%">Rateio 15</th>
           <th width="10%">Rateio 14</th>
+          <th width="8%">Linha</th>
+          <th width="8%">Coluna</th>
           <th></th>
           <th></th>
         </tr>
 
        <% @resultados.each do |resultado| %>
         <tr>
-          <td style="color:#1E90FF"><%= resultado.concurso %></td>
+          <td style="color:#1E90FF;text-align: center"><%= resultado.concurso %></td>
           <td style="color:#666"><%= I18n.l(resultado.data) if resultado.data %></td>
           <td><%= resultado.a %></td>
           <td><%= resultado.b %></td>
@@ -62,6 +64,8 @@
           <td><%= resultado.o %></td>
           <td><span style="color:#006400"><b><%= number_to_currency(resultado.rateio_15) %></b></span></td>
           <td><span style="color:#006400"><b><%= number_to_currency(resultado.rateio_14) %></b></span></td>
+          <td><%= resultado.linha %></td>
+          <td><%= resultado.coluna %></td>
           <td><%= link_to t('botao.editar'), edit_resultado_path(resultado), :class => 'link-form' %></td>
           <td><%= link_to t('botao.excluir'), resultado, 
         confirm: 'Tem certeza que deseja excluir este registro?', method: :delete, :class => 'link-form' %></td>

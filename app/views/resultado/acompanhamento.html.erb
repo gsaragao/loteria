@@ -34,6 +34,8 @@
           <th width="3%" style="padding: 4px">23</th>
           <th width="3%" style="padding: 4px">24</th>
           <th width="3%" style="padding: 4px">25</th>
+          <th width="7%" style="padding: 4px">Linha</th>
+          <th width="7%" style="padding: 4px">Coluna</th>
         </tr>
 
        <% @resultados.each do |resultado| %>
@@ -64,6 +66,8 @@
           <% if resultado[23].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[23] %></td>
           <% if resultado[24].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 4px;text-align: center"><% end %><%= resultado[24] %></td>
           <% if resultado[25].blank? %><td bgcolor="#000000" style="padding: 4px;text-align: center"><% else %><td bgcolor="#A9E2F3" style="padding: 6px;text-align: center"><% end %><%= resultado[25] %></td>
+          <td style="color:#1E90FF;padding: 6px;text-align: center"><%= resultado[26] %></td>
+          <td style="color:#1E90FF;padding: 6px;text-align: center"><%= resultado[27] %></td>
         </tr>
        <% end %>
        </table>
