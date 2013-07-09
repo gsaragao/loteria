@@ -18,6 +18,12 @@ class ResultadoController < ApplicationController
     respond_with @resultados
   end
 
+  def inverso
+    @resultados = Resultado.inverso
+    @resultados = @resultados.sort_by { |result| result[0] }
+    respond_with @resultados
+  end
+
   def new
     load_combos
     @action = "create"

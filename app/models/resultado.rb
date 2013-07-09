@@ -113,6 +113,27 @@ class Resultado < ActiveRecord::Base
   	 retorno
   end
 
+  def self.inverso
+  	
+  	 retorno = [] 
+
+  	 resultados = Resultado.acompanhamento 
+
+  	 resultados.each {|result| 
+
+  	 		jogo = []
+  	 		jogo[0] = result[0]
+
+  	 		for i in 1..25
+  	 			 jogo[i] = i if result[i].blank? 
+  	 		end
+
+  	 		retorno << jogo	
+  	 }
+
+  	 retorno
+  end
+
   def self.analisar
 
 		retorno = []
@@ -250,8 +271,8 @@ class Resultado < ActiveRecord::Base
 			jogo[16] = home.qq if home.qtde_dezenas.to_i > 16
 			jogo[17] = home.rr if home.qtde_dezenas.to_i > 17
 
-	  	custo15 = 1.25
-			custo16 = 16
+	  		custo15 = 1.25
+			custo16 = 20
 			custo17 = 170
 			custo18 = 1020
 

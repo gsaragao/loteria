@@ -12,6 +12,7 @@ Loteria::Application.routes.draw do
 
   resources :resultado, :except => [:show]
   match "resultado/acompanhamento" => "resultado#acompanhamento"
+  match "resultado/inverso" => "resultado#inverso"
   
   resources :lotofacil, :only => [:index]
 

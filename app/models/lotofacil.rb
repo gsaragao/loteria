@@ -5,8 +5,6 @@ class Lotofacil < ActiveRecord::Base
 
   attr_accessor :qtde_dezenas, :order, :ascdes
 
-  self.per_page = 10
-
   def pesquisar(page)
 
   	saida = []
@@ -19,19 +17,19 @@ class Lotofacil < ActiveRecord::Base
   	end   
 
   	if qtde_dezenas == '15'
-  		saida = Lotofacil.paginate(:page => page).order(ordenacao)
+  		saida = Lotofacil.order(ordenacao).limit(50)
 	end
 
 	if qtde_dezenas == '16'
-    	saida = Lotofacil16.paginate(:page => page).order(ordenacao)
+    	saida = Lotofacil16.order(ordenacao).limit(50)
 	end
 
 	if qtde_dezenas == '17'
-    	saida = Lotofacil17.paginate(:page => page).order(ordenacao)
+    	saida = Lotofacil17.order(ordenacao).limit(50)
 	end
 
 	if qtde_dezenas == '18'
-    	saida = Lotofacil18.paginate(:page => page).order(ordenacao)
+    	saida = Lotofacil18.order(ordenacao).limit(50)
 	end	
 
 	saida
