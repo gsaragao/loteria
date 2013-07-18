@@ -233,7 +233,7 @@
    <div class="row">
     <div class="span17">
 
-      <div id="hc" style="width:100%; height:400px;"></div>
+      <div id="hc" style="height:400px;"></div>
 
     </div>
    </div> 
@@ -264,8 +264,9 @@ Highcharts.setOptions({
     });
     
     var chart1 = new Highcharts.Chart({
+
         chart: {
-            renderTo: 'hc',
+            renderTo: 'hc'
         },
 
         title: {
@@ -278,10 +279,19 @@ Highcharts.setOptions({
             }
         },
         
+        scrollbar: {
+          enabled: true
+        },
+
         xAxis: {
             name: 'Concurso',
-            categories: [<%= @resultado[:categories] %>]
+            categories: [<%= @resultado[:categories] %>],
+            min: 200
         },
+
+        navigator: {
+         enabled: true
+        },  
 
         yAxis: {
             title: {

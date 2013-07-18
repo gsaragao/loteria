@@ -105,12 +105,13 @@
             <% end %>  
           <% end %>
 
-          <th width="7%">Pontos 15</th>
-          <th width="7%">Pontos 14</th>
-          <th width="7%">Pontos 13</th>
-          <th width="7%">Pontos 12</th>
-          <th width="7%">Pontos 11</th>
+          <th width="6%" style="font-size:11px;">15 Pontos</th>
+          <th width="6%" style="font-size:11px;">14 Pontos</th>
+          <th width="6%" style="font-size:11px;">13 Pontos</th>
+          <th width="6%" style="font-size:11px;">12 Pontos</th>
+          <th width="6%" style="font-size:11px;">11 Pontos</th>
           <th width="10%">Total Prêmio</th>
+          <th width="5%">&nbsp;</th>
         </tr>
 
        <% @jogos.each do |jogo| %>
@@ -144,7 +145,14 @@
           <td style="text-align: center;"><b><%= jogo.pontos_13 %></b></td>
           <td style="text-align: center;"><b><%= jogo.pontos_12 %></b></td>
           <td style="text-align: center;"><b><%= jogo.pontos_11 %></b></td>
-          <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(jogo.total_premio) %></b></span></td>
+          <% if (jogo.total_premio >= 0) %>
+            <td style="text-align: right;"><span style="color:#006400"><b><%= number_to_currency(jogo.total_premio) %></b></span>
+          <% else %>  
+            <td style="text-align: right;"><span style="color:red"><b><%= number_to_currency(jogo.total_premio) %></b></span>
+          <% end %>          
+
+          <td><b> <%= link_to 'Analisar', home_index_path(:qtde_dezenas => @lotofacil.qtde_dezenas, :jogo => jogo), :class => 'link-form' %></b></td>  
+          </td>
         </tr>
        <% end %>
        </table>

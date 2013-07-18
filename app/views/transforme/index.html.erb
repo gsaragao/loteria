@@ -28,6 +28,8 @@
                 <span class="badge badge-success">06</span>&nbsp;
                   <%= f.text_field :ff, :class => 'input-hipermini' %>
               </label>
+            </div>
+            <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-success">07</span>&nbsp;
                 <%= f.text_field :gg, :class => 'input-hipermini' %>
@@ -44,8 +46,6 @@
                 <span class="badge badge-success">10</span>&nbsp;
                 <%= f.text_field :jj, :class => 'input-hipermini' %>
               </label>
-              </div>
-              <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-success">11</span>&nbsp;
                   <%= f.text_field :kk, :class => 'input-hipermini' %>
@@ -54,6 +54,8 @@
                 <span class="badge badge-success">12</span>&nbsp;
                 <%= f.text_field :ll, :class => 'input-hipermini' %>
               </label>
+              </div>
+            <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-success">13</span>&nbsp;
                 <%= f.text_field :mm, :class => 'input-hipermini' %>
@@ -130,7 +132,7 @@
              <div class="row">
               <div class="span7">
                 <%= f.submit 'Transformar' , :class => "btn btn-primary" %>&nbsp;&nbsp;<% if @resultado_total.size > 0 %>
-                <%= @resultado_total.size %> jogos<% end %>
+                <%= @resultado_total.size %> jogo(s)<% end %>
               </div> <!-- span12-->
             </div> <!-- row -->
 

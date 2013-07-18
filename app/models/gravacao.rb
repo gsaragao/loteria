@@ -4,9 +4,24 @@ require 'roo'
 require 'iconv'
 class Gravacao
 
+def self.atualizar_data
+	oo = Roo::Openoffice.new("app/models/planilha/resultado.ods")
+	oo.sheet(0)
+
+	puts 'Vai rodar!'
+
+	1.upto(oo.last_row) do |line|
+		if !oo.cell(line,'B').blank?	
+		  resultado = Resultado.find(oo.cell(line,'A'))	
+		  resultado.update_column(:data , oo.cell(line,'B'))  
+	    end  
+	end
+	puts 'Terminou'
+end	
+
 # Rotina para gravar os resultados da loteria no banco
  def self.gravar_resultado
-		oo = Roo::Openoffice.new("app/models/planilha/resultado2.ods")
+		oo = Roo::Openoffice.new("app/models/planilha/resultado.ods")
 		#oo = Roo::Excel.new("dados.xls")
 		oo.sheet(0)
 

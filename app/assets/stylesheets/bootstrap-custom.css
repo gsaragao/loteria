@@ -1,5 +1,6 @@
 body {
   font-family: verdana, arial, helvetica, sans-serif !important;
+  font-size: 12px;
 }
 
 .container { 
@@ -36,7 +37,7 @@ a.link-form {
 }
 
 a:hover {
-  color: #FFFFFF;
+  color: #000000;
   text-decoration: underline;
 }
 
