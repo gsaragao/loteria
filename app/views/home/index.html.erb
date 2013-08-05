@@ -273,6 +273,10 @@ Highcharts.setOptions({
             text: 'Análise Histórica'
         },
 
+        rangeSelector : {
+            selected : 50
+        },
+
         tooltip: {
             formatter: function() {
               return '<b> Concurso:</b> ' + this.x + '<br><b>Prêmio:</b> R$ ' + moeda.formatar(this.y); //.toString().replace(".",",") ;
@@ -286,12 +290,22 @@ Highcharts.setOptions({
         xAxis: {
             name: 'Concurso',
             categories: [<%= @resultado[:categories] %>],
-            min: 200
         },
 
         navigator: {
-         enabled: true
-        },  
+         adaptToUpdatedData: false,
+         enabled: true,
+
+           xAxis: {
+                tickWidth: 0,
+                lineWidth: 0,
+                gridLineWidth: 1,
+                tickPixelInterval: 200,
+                labels: {
+                  enabled: false
+                }
+           }    
+         },  
 
         yAxis: {
             title: {
