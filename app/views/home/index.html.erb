@@ -129,7 +129,7 @@
               <span class="badge badge-info">Manual</span>&nbsp;<%= f.radio_button :tipo_confere, "M", {:id => "tipo_m"} %>
                 </label>
                 <label class="radio inline">
-              <span class="badge badge-info">Planilha</span>&nbsp;<%= f.radio_button :tipo_confere, "A", {:id => "tipo_a"} %>&nbsp;
+              <span class="badge badge-info">Planilha</span>&nbsp;<%= f.radio_button :tipo_confere, "P", {:id => "tipo_p"} %>&nbsp;
               <%= f.text_field :nome_arquivo, :class => 'input-medium', :disabled => 'disabled' %>
                 </label>
               </div>  
@@ -382,7 +382,7 @@ if ($('#tipo_c').is('input:checked')) {
   $('#home_concursos').removeAttr('disabled');  
 }
 
-if ($('#tipo_a').is('input:checked')) {
+if ($('#tipo_p').is('input:checked')) {
   $('#home_nome_arquivo').removeAttr('disabled');
 }
 
@@ -398,7 +398,7 @@ $('#tipo_m').click(function() {
   $('#home_nome_arquivo').attr('disabled','disabled');
 });
 
-$('#tipo_a').click(function() { 
+$('#tipo_p').click(function() { 
   $('#home_nome_arquivo').removeAttr('disabled');
 });
 

@@ -28,8 +28,6 @@
                 <span class="badge badge-success">06</span>&nbsp;
                   <%= f.text_field :ff, :class => 'input-hipermini' %>
               </label>
-            </div>
-            <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-success">07</span>&nbsp;
                 <%= f.text_field :gg, :class => 'input-hipermini' %>
@@ -42,6 +40,8 @@
                 <span class="badge badge-success">09</span>&nbsp;
                 <%= f.text_field :ii, :class => 'input-hipermini' %>
               </label>
+            </div>
+            <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-success">10</span>&nbsp;
                 <%= f.text_field :jj, :class => 'input-hipermini' %>
@@ -54,8 +54,6 @@
                 <span class="badge badge-success">12</span>&nbsp;
                 <%= f.text_field :ll, :class => 'input-hipermini' %>
               </label>
-              </div>
-            <div class="controls">
               <label class="checkbox inline">
                 <span class="badge badge-success">13</span>&nbsp;
                 <%= f.text_field :mm, :class => 'input-hipermini' %>
@@ -118,6 +116,17 @@
                 </label>
                 <label class="radio inline">
               <span class="badge badge-warning">12</span>&nbsp;<%= f.radio_button :qtde_dezenas, "12", {:id => "r12"} %>
+                </label>
+              </div>  
+            </div>
+            <div class="control-group">    
+              <b>Tipo:</b>
+               <div class="controls">
+                <label class="radio inline">
+              <span class="badge badge-info">Número</span>&nbsp;<%= f.radio_button :numero_letra, "N" %>
+                </label>
+                <label class="radio inline">
+              <span class="badge badge-info">Letra</span>&nbsp;<%= f.radio_button :numero_letra, "L" %>
                 </label>
               </div>  
             </div>

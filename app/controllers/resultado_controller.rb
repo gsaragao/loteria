@@ -8,7 +8,8 @@ class ResultadoController < ApplicationController
 
   def index
     @resultado = Resultado.new(params[:resultado])
-    @resultados = @resultado.pesquisar(params[:page])
+    @resultados =  @resultado.pesquisar(params[:page])
+    #atualiza_linha_coluna
     respond_with @resultados
   end
 
@@ -94,5 +95,15 @@ class ResultadoController < ApplicationController
        params[:resultado].delete_if{|k,v| v.blank?}
     end
   end
+
+  def atualiza_linha_coluna
+      @resultados.each { |result| 
+          result.converte_linha
+          result.converte_coluna
+      result.save
+        }
+  end
+
+
   
 end

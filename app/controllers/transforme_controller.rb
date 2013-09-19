@@ -10,6 +10,7 @@ class TransformeController < ApplicationController
     @home = Home.new(params[:home])
     @resultado = []
     @resultado_total = []
+    @home.numero_letra = "N" if @home.numero_letra.blank?
 
     if params[:commit] == 'Transformar' 
       if validaForm

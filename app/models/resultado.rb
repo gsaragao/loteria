@@ -1,7 +1,8 @@
 # encoding: UTF-8
 class Resultado < ActiveRecord::Base
   usar_como_dinheiro :rateio_15, :rateio_14
-  attr_accessible :concurso, :data, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :rateio_15, :rateio_14
+  attr_accessible :concurso, :data, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :rateio_15, :rateio_14,
+  :l1, :l2, :l3, :l4, :l5, :c1, :c2, :c3, :c4, :c5
   validates_presence_of :concurso, :data, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :rateio_15, :rateio_14
 
   self.per_page = 10
@@ -22,7 +23,15 @@ class Resultado < ActiveRecord::Base
   	 find_by_sql("select round(sum(rateio_14) / count(*),2) rateio_14 from resultados")
   end
 
-  def linha
+  def linha 
+	l1.to_s + '-' + l2.to_s + '-' + l3.to_s + '-' + l4.to_s + '-' + l5.to_s  	
+  end	
+
+  def coluna 
+	c1.to_s + '-' + c2.to_s + '-' + c3.to_s + '-' + c4.to_s + '-' + c5.to_s  	
+  end
+
+  def converte_linha
   	  	
   		linha1 = 0
   		linha2 = 0
@@ -52,10 +61,14 @@ class Resultado < ActiveRecord::Base
   	 		 end
   	 	end
 
-  	 	linha1.to_s + '-' + linha2.to_s + '-' + linha3.to_s + '-' + linha4.to_s + '-' + linha5.to_s
+  	 	self.l1 = linha1
+  	 	self.l2 = linha2 
+  	 	self.l3 = linha3
+  	 	self.l4 = linha4
+  	 	self.l5 = linha5
   end
 
-  def coluna
+  def converte_coluna
   	  	
   		coluna1 = 0
   		coluna2 = 0
@@ -85,7 +98,11 @@ class Resultado < ActiveRecord::Base
   	 		 end
   	 	end
 
-  	 	coluna1.to_s + '-' + coluna2.to_s + '-' + coluna3.to_s + '-' + coluna4.to_s + '-' + coluna5.to_s
+  	 	self.c1 = coluna1
+  	 	self.c2 = coluna2
+  	 	self.c3 = coluna3
+  	 	self.c4 = coluna4
+  	 	self.c5 = coluna5
   end
 
 

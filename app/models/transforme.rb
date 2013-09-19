@@ -9,7 +9,8 @@ class Transforme
 
 		if home.exportar == "1"
 			begin
-				File.delete("app/models/planilha/#{home.nome_arquivo}.xls")
+				endereco = "app/models/planilha/#{home.nome_arquivo}.xls" 
+				File.delete(endereco) if File.exist?(endereco)
 			rescue Errno::ENOENT => e
 				puts "-----------------------------------------------------------"
 				puts "Error: #{e.message}"
@@ -175,9 +176,23 @@ class Transforme
 
 	def self.convert_export(arr, home)
 		
+		format = Spreadsheet::Format.new  :number_format => '00'
+
 		for i in 0..arr.size - 1
 			 row = arr[i].split(" - ")
-  	   @sheet.insert_row(i, row)
+
+			if home.numero_letra == "N"
+				 for x in 0..row.size - 1
+				 		row[x] = row[x].to_i
+				 end			 
+
+  	     @sheet.insert_row(i, row)
+  	     row_sheet = @sheet.row(i)
+  		   row_sheet.default_format = format
+  		else
+  			 @sheet.insert_row(i, row)
+  		end	
+
   	end
 
   	@planilha.write "app/models/planilha/#{home.nome_arquivo}.xls"

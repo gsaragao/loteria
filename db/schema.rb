@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125101324) do
+ActiveRecord::Schema.define(:version => 20130919025235) do
 
   create_table "homes", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -154,6 +154,16 @@ ActiveRecord::Schema.define(:version => 20130125101324) do
     t.decimal  "rateio_14",  :precision => 13, :scale => 2
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
+    t.integer  "l1"
+    t.integer  "l2"
+    t.integer  "l3"
+    t.integer  "l4"
+    t.integer  "l5"
+    t.integer  "c1"
+    t.integer  "c2"
+    t.integer  "c3"
+    t.integer  "c4"
+    t.integer  "c5"
   end
 
 end

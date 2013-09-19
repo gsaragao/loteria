@@ -27,7 +27,7 @@ class HomeController < ApplicationController
       if @home.tipo_confere == 'M'
         lista << @home
         @resultado = Resultado.verificar(@home)
-      elsif @home.tipo_confere == 'A'
+      elsif @home.tipo_confere == 'P'
 
         begin
 
@@ -103,9 +103,6 @@ class HomeController < ApplicationController
   end
 
   def atribuir_jogo
-
-#$ intersection = conta.attributes.keys && verba.attributes.keys
-#$ conta.attributes = verba.attributes.select {|k, v| intersection.include? k}
 
     if @home.qtde_dezenas == '15'
       jogo = Lotofacil.find(params[:jogo])
