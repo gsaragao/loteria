@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
-ruby '1.9.3', :engine => 'jruby', :engine_version => '1.7.3'
+ruby '1.9.3', :engine => 'jruby', :engine_version => '1.7.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -13,7 +13,7 @@ gem "will_paginate", "~> 3.0.3"
 gem 'devise'
 gem 'brdinheiro'
 gem "roo", "~> 1.11.2"
-gem "spreadsheet", "~> 0.8.5"
+gem "spreadsheet"
 #gem 'iconv'
 gem 'puma'
 

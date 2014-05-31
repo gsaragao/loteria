@@ -8,8 +8,10 @@ class ResultadoController < ApplicationController
 
   def index
     @resultado = Resultado.new(params[:resultado])
-    @resultados =  @resultado.pesquisar(params[:page])
+    @resultados =  [] #@resultado.pesquisar(params[:page])
     #atualiza_linha_coluna
+    Reducao.verificar
+
     respond_with @resultados
   end
 

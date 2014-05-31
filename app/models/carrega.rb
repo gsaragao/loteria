@@ -1,48 +1,42 @@
 # encoding: UTF-8
-require 'roo'
-require 'java'
-
-import java.util.ArrayList
+require 'spreadsheet'
 
 class Carrega
 
 	# Rotina de obter dados da planilha a partir de um nome de arquivo
 	def self.obter_dados_planilha(nome)
 
+		Spreadsheet.client_encoding = 'UTF-8'
+
 		retorno = []
 		
-		endereco = "app/models/planilha/" + nome
+		book = Spreadsheet.open "app/models/planilha/" + nome 
+		sheet1 = book.worksheet 0
 
-		oo = Roo::Openoffice.new(endereco)
-		oo.sheet(0)
+		sheet1.each do |row|
 
-		1.upto(oo.last_row) do |line|
+			home = Home.new
 
-			if line > 0
+			home.aa = row[0] 
+			home.bb = row[1] 
+			home.cc = row[2]  
+			home.dd = row[3]  
+			home.ee = row[4] 
+			home.ff = row[5] 
+			home.gg = row[6] 
+			home.hh = row[7] 
+			home.ii = row[8] 
+			home.jj = row[9] 
+			home.kk = row[10] 
+			home.ll = row[11] 
+			home.mm = row[12] 
+			home.nn = row[13] 
+			home.oo = row[14] 
+			home.pp = row[15] if row[15]
+			home.qq = row[16] if row[16]
+			home.rr = row[17] if row[17]
 
-				home = Home.new
-
-				home.aa = oo.cell(line,'A') 
-				home.bb = oo.cell(line,'B') 
-				home.cc = oo.cell(line,'C')  
-				home.dd = oo.cell(line,'D')  
-				home.ee = oo.cell(line,'E') 
-				home.ff = oo.cell(line,'F') 
-				home.gg = oo.cell(line,'G') 
-				home.hh = oo.cell(line,'H') 
-				home.ii = oo.cell(line,'I') 
-				home.jj = oo.cell(line,'J') 
-				home.kk = oo.cell(line,'K') 
-				home.ll = oo.cell(line,'L') 
-				home.mm = oo.cell(line,'M') 
-				home.nn = oo.cell(line,'N') 
-				home.oo = oo.cell(line,'O') 
-				home.pp = oo.cell(line,'P') if oo.cell(line,'P')
-				home.qq = oo.cell(line,'Q') if oo.cell(line,'Q')
-				home.rr = oo.cell(line,'R') if oo.cell(line,'R')
-
-				retorno << home	
-			end	
+			retorno << home	
 		end
 
 		retorno
@@ -51,41 +45,38 @@ class Carrega
 	# Rotina de obter dados da planilha a partir de um nome de arquivo
 	def self.obter_dados_planilha_java(nome)
 
+		Spreadsheet.client_encoding = 'UTF-8'
+
 		retorno = []
-		#list = ArrayList.new
 
-		endereco = "app/models/planilha/" + nome
+		book = Spreadsheet.open "app/models/planilha/" + nome 
+		sheet1 = book.worksheet 0
 
-		oo = Roo::Openoffice.new(endereco)
-		oo.sheet(0)
 
-		1.upto(oo.last_row) do |line|
+		sheet1.each do |row|
 
-			if line > 0
+			home = []
 
-				home = []
+			home[0] = row[0].to_i 
+			home[1] = row[1].to_i 
+			home[2] = row[2].to_i  
+			home[3] = row[3].to_i  
+			home[4] = row[4].to_i 
+			home[5] = row[5].to_i 
+			home[6] = row[6].to_i 
+			home[7] = row[7].to_i 
+			home[8] = row[8].to_i 
+			home[9] = row[9].to_i 
+			home[10] = row[10].to_i 
+			home[11] = row[11].to_i 
+			home[12] = row[12].to_i 
+			home[13] = row[13].to_i 
+			home[14] = row[14].to_i 
+			home[15] = row[15].to_i if row[15]
+			home[16] = row[16].to_i if row[16]
+			home[17] = row[17].to_i if row[17]
 
-				home[0] = oo.cell(line,'A').to_i 
-				home[1] = oo.cell(line,'B').to_i 
-				home[2] = oo.cell(line,'C').to_i  
-				home[3] = oo.cell(line,'D').to_i  
-				home[4] = oo.cell(line,'E').to_i 
-				home[5] = oo.cell(line,'F').to_i 
-				home[6] = oo.cell(line,'G').to_i 
-				home[7] = oo.cell(line,'H').to_i 
-				home[8] = oo.cell(line,'I').to_i 
-				home[9] = oo.cell(line,'J').to_i 
-				home[10] = oo.cell(line,'K').to_i 
-				home[11] = oo.cell(line,'L').to_i 
-				home[12] = oo.cell(line,'M').to_i 
-				home[13] = oo.cell(line,'N').to_i 
-				home[14] = oo.cell(line,'O').to_i 
-				home[15] = oo.cell(line,'P').to_i if oo.cell(line,'P')
-				home[16] = oo.cell(line,'Q').to_i if oo.cell(line,'Q')
-				home[17] = oo.cell(line,'R').to_i if oo.cell(line,'R')
-
-				retorno << home
-			end	
+			retorno << home
 		end
 
 		retorno

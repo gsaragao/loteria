@@ -163,6 +163,6 @@ DEPENDENCIES
   rails (= 3.2.11)
   roo (~> 1.11.2)
   sass-rails (~> 3.2.3)
-  spreadsheet (~> 0.8.5)
+  spreadsheet
   uglifier (>= 1.0.3)
   will_paginate (~> 3.0.3)
